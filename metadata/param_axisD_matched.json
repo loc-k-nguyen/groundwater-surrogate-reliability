@@ -1,0 +1,74 @@
+[
+  {
+    "param_id": 9210,
+    "anisotropy": 5,
+    "correlation_length": 500,
+    "log_variance": 0.1,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 0.1,
+    "axis": "M1_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  },
+  {
+    "param_id": 9211,
+    "anisotropy": 10,
+    "correlation_length": 500,
+    "log_variance": 0.1,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 0.1,
+    "axis": "M2_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  },
+  {
+    "param_id": 9212,
+    "anisotropy": 5,
+    "correlation_length": 500,
+    "log_variance": 1.0,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 0.1,
+    "axis": "M3_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  },
+  {
+    "param_id": 9213,
+    "anisotropy": 10,
+    "correlation_length": 500,
+    "log_variance": 1.0,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 0.1,
+    "axis": "M4_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  },
+  {
+    "param_id": 9214,
+    "anisotropy": 5,
+    "correlation_length": 500,
+    "log_variance": 0.1,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 1.0,
+    "axis": "M5_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  },
+  {
+    "param_id": 9215,
+    "anisotropy": 10,
+    "correlation_length": 500,
+    "log_variance": 1.0,
+    "long_dispersivity": 200.0,
+    "trans_dispersivity_ratio": 1.0,
+    "axis": "M6_matched_alphaL200",
+    "role": "ood_axisD_transport_matched_test_only",
+    "tag": "tier1_axisD_matched_journal_extension",
+    "split": "TIER1_AXISD_MATCHED_OOD_TEST_ONLY"
+  }
+]

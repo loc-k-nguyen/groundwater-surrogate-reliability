@@ -1,0 +1,38 @@
+{
+ "corr 20/50 (exact twin in training), realizations [1, 2, 3]": {
+  "n": 108,
+  "max_r_median": 0.9999999842651112,
+  "max_r_min": 0.9999999718182347,
+  "max_r_max": 0.9999999865519947
+ },
+ "corr 20/50 (exact twin in training), realizations [4, 5]": {
+  "n": 72,
+  "max_r_median": 0.046661095945545704,
+  "max_r_min": 0.012824214991572283,
+  "max_r_max": 0.08686668415620476
+ },
+ "corr 500 (exact or near twin in validation-calibration or other anisotropy), realizations [1, 2, 3]": {
+  "n": 54,
+  "max_r_median": 0.9999998075031686,
+  "max_r_min": 0.9837545747457459,
+  "max_r_max": 0.9999999841373531
+ },
+ "corr 500 (exact or near twin in validation-calibration or other anisotropy), realizations [4, 5]": {
+  "n": 36,
+  "max_r_median": 0.03783865567361712,
+  "max_r_min": 0.018625935345047175,
+  "max_r_max": 0.0876815423634604
+ },
+ "reference pool (iid_test), realizations [1, 2, 3]": {
+  "n": 66,
+  "max_r_median": 0.9864219395712803,
+  "max_r_min": 0.9837545749716751,
+  "max_r_max": 1.0000000000000018
+ },
+ "reference pool (iid_test), realizations [4, 5]": {
+  "n": 44,
+  "max_r_median": 0.053007671179723694,
+  "max_r_min": 0.018625559288682692,
+  "max_r_max": 0.08768284850536395
+ }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "metadata/param_axisD_matched.csv",
+    "removed_field": "run_bat_code",
+    "rows": 6,
+    "source_sha256": "85970f4022b8bced796dfb1726883ee22430308baf77b392d94c0ef232114def",
+    "release_sha256": "0e840cbd7701a43c4f81b6bb4ec7641d60cfa0a907b2433a0d712b2f32a6d892",
+    "other_fields_unchanged": true
+  },
+  {
+    "path": "metadata/param_axisD_matched.json",
+    "removed_field": "run_bat_code",
+    "rows": 6,
+    "source_sha256": "fc9c1fe810f2dcba828c202ceddbcbc981e0a07f68dbcd2f57fe22d3c31b3e4f",
+    "release_sha256": "31931859bcce8de5d45b27cf1d1c7d8f404b84f165079c466207e8516d2131fe",
+    "other_fields_unchanged": true
+  },
+  {
+    "path": "metadata/param_axisD_severity.csv",
+    "removed_field": "run_bat_code",
+    "rows": 18,
+    "source_sha256": "ee9923f8bb026f18d94dcd16d4e37745a9fd1aa821925a73291d000c5c354f9e",
+    "release_sha256": "d9ea78438307768fe0a3fcf2038ef6a13c09ab84a56c4f7611e8fd4b1497266e",
+    "other_fields_unchanged": true
+  },
+  {
+    "path": "metadata/param_axisD_severity.json",
+    "removed_field": "run_bat_code",
+    "rows": 18,
+    "source_sha256": "d39bfbb2f095448b9f9081cf7c832e87a949b532abb9520806308bc642f2dd47",
+    "release_sha256": "8cec81a8484b6d394e904237c94f92d2aeb4e9d1052b98a9a1356212627b1edd",
+    "other_fields_unchanged": true
+  },
+  {
+    "path": "metadata/param_registry_master.csv",
+    "removed_field": "run_bat_code",
+    "rows": 318,
+    "source_sha256": "4bec13bc553da55808dab8789f99a6ec7d3ccb558377f5a2184bd194ce489db4",
+    "release_sha256": "8eeea154b4716fad582fa5958e754e75708d92c04ff85e17e24663e5adda0e39",
+    "other_fields_unchanged": true
+  }
+]

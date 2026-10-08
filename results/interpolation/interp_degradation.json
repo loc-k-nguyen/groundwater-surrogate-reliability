@@ -1,0 +1,129 @@
+{
+  "alpha": 0.1,
+  "scp_quantile": 3.8334767818450928,
+  "sigma_levels": [
+    0.3,
+    0.7,
+    1.3,
+    1.7,
+    2.0
+  ],
+  "n_samples": [
+    100,
+    89,
+    95,
+    90,
+    270
+  ],
+  "plume_ssim_mean": [
+    0.5328867487053398,
+    0.5486762348212721,
+    0.5542251753460588,
+    0.557442913565479,
+    0.7056384081547589
+  ],
+  "plume_ssim_std": [
+    0.10699068907955057,
+    0.10444191798457717,
+    0.10280566619155523,
+    0.10318693469761929,
+    0.1124571693079778
+  ],
+  "coverage_at_90": [
+    0.7110441416666666,
+    0.7078642265917604,
+    0.7102501824561402,
+    0.7113788703703703,
+    0.8291226709876544
+  ],
+  "mean_interval_width": [
+    7.666983127593994,
+    7.666983127593994,
+    7.666983127593994,
+    7.666983127593994,
+    7.666953874655877
+  ],
+  "per_sigma": {
+    "interp_03": {
+      "plume_ssim_mean": 0.5328867487053398,
+      "plume_ssim_std": 0.10699068907955057,
+      "global_ssim_mean": 0.7995676340301259,
+      "global_ssim_std": 0.027870001648594017,
+      "mass_error_mean": 0.9174048540969515,
+      "mass_error_std": 0.05010256713486752,
+      "coverage_at_90": 0.7110441416666666,
+      "mean_interval_width": 7.666983127593994,
+      "plume_coverage_at_90": 0.8634292343355848,
+      "plume_mean_interval_width": 7.666956725120545,
+      "n_samples": 100
+    },
+    "interp_07": {
+      "plume_ssim_mean": 0.5486762348212721,
+      "plume_ssim_std": 0.10444191798457717,
+      "global_ssim_mean": 0.7848494926574553,
+      "global_ssim_std": 0.029935532906795997,
+      "mass_error_mean": 0.8954491110715277,
+      "mass_error_std": 0.051017556724558676,
+      "coverage_at_90": 0.7078642265917604,
+      "mean_interval_width": 7.666983127593994,
+      "plume_coverage_at_90": 0.8749612678318358,
+      "plume_mean_interval_width": 7.666956724745504,
+      "n_samples": 89
+    },
+    "interp_13": {
+      "plume_ssim_mean": 0.5542251753460588,
+      "plume_ssim_std": 0.10280566619155523,
+      "global_ssim_mean": 0.7786683051632096,
+      "global_ssim_std": 0.032297082672329704,
+      "mass_error_mean": 0.8863034902850686,
+      "mass_error_std": 0.052627143307461974,
+      "coverage_at_90": 0.7102501824561402,
+      "mean_interval_width": 7.666983127593994,
+      "plume_coverage_at_90": 0.881195106997949,
+      "plume_mean_interval_width": 7.666956926646986,
+      "n_samples": 95
+    },
+    "interp_17": {
+      "plume_ssim_mean": 0.557442913565479,
+      "plume_ssim_std": 0.10318693469761929,
+      "global_ssim_mean": 0.7749443794522876,
+      "global_ssim_std": 0.03314297755096529,
+      "mass_error_mean": 0.8789678843938188,
+      "mass_error_std": 0.05278913493842056,
+      "coverage_at_90": 0.7113788703703703,
+      "mean_interval_width": 7.666983127593994,
+      "plume_coverage_at_90": 0.8829928625427432,
+      "plume_mean_interval_width": 7.666957314809164,
+      "n_samples": 90
+    }
+  },
+  "ood_sigma_20": {
+    "aggregate": {
+      "ensemble_var_mean": 0.07460289336087277,
+      "ensemble_var_std": 0.009328170767101443,
+      "gaussian_crps_mean": 1.168471184587483,
+      "gaussian_crps_n_plume_pixels": 374944539,
+      "gaussian_crps_std": 1.1488432265784938,
+      "global_ssim_mean": 0.8899434457405491,
+      "global_ssim_std": 0.026384269920149472,
+      "mass_error_mean": 0.44043347763817514,
+      "mass_error_std": 0.014077416054425813,
+      "n_members": 5,
+      "n_samples": 270,
+      "plume_ensemble_std_mean": 0.18014232223784482,
+      "plume_ssim_mean": 0.7056384081547589,
+      "plume_ssim_std": 0.1124571693079778,
+      "uncertainty_error_iou_mean": 0.2764127930506914,
+      "uncertainty_error_iou_std": 0.0510677011822296,
+      "uncertainty_error_iou_top_quantile": 0.75
+    },
+    "scp_alpha": {
+      "alpha": 0.1,
+      "quantile": 3.8334767818450928,
+      "global_coverage": 0.8291226709876544,
+      "global_mean_width": 7.666953874655877,
+      "plume_coverage": 0.9558149292047696,
+      "plume_mean_width": 7.6669536312214435
+    }
+  }
+}

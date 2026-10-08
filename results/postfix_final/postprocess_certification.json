@@ -1,0 +1,15 @@
+{
+  "status": "OBJ3_BOUNDARYFIX_POSTPROCESS_CERTIFIED",
+  "source_partial_job": 3353290,
+  "continuation_job": 3353703,
+  "old_scp_width": 9.88679504394,
+  "required_below": 7.909436035152,
+  "new_iid_scp_width": 7.666953634743815,
+  "new_ood_scp_width": 7.6669536312214435,
+  "continuation_output_sha256": {
+    "tier0/tier0_calibration_boundaryfix.json": "af4f90e9431ede57782ac365621fbbf9dca6b8d543353de18d7b5a5bcd76675e",
+    "tier0/tier0_results_boundaryfix.csv": "08402ac7fecd6d914ce5c27e4613192752e4beefa0d1780535bb29744a02c763",
+    "tier0/tier0_meta_boundaryfix.json": "d8cd1f76a3aed05eae05587cd4ed158927d7c987f5bd43edf8afa86586bac38f",
+    "selective_prediction_curve.json": "a5ab574f01ba338846fc0681f5fbe68fb6016abbab52efb8a6390f089008cfa2"
+  }
+}

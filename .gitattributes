@@ -1,0 +1,3 @@
+# Preserve exact bytes used by source hashes and numerical certificates.
+* -text
+*.pdf binary

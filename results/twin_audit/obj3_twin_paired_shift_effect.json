@@ -1,0 +1,138 @@
+{
+ "n_twin_pairs": 60,
+ "cells": [
+  "aniso 10.0, corr 500.0",
+  "aniso 5.0, corr 500.0"
+ ],
+ "note": "Pairs share anisotropy, correlation length and realization; only sigma2Y differs (2.0 versus the reference level). The independent unit is the cell, not the pair.",
+ "monitors": {
+  "Deep ensemble (U-Net)": {
+   "plume_ssim": {
+    "n_pairs": 60,
+    "mean_change": 0.12813094392919824,
+    "median_change": 0.07245396540478505,
+    "n_increase": 49,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.13814577018953283,
+     "aniso 10.0, corr 500.0": 0.11811611766886361
+    }
+   },
+   "oracle": {
+    "n_pairs": 60,
+    "mean_change": 0.055316025674343114,
+    "median_change": 0.03990872994065285,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.060715117196242015,
+     "aniso 10.0, corr 500.0": 0.04991693415244421
+    }
+   },
+   "deployable": {
+    "n_pairs": 60,
+    "mean_change": 0.00929738864302635,
+    "median_change": 0.009924348294734958,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.010392148017883303,
+     "aniso 10.0, corr 500.0": 0.0082026292681694
+    }
+   }
+  },
+  "Heteroscedastic (U-Net)": {
+   "plume_ssim": {
+    "n_pairs": 60,
+    "mean_change": 0.08684586372614293,
+    "median_change": 0.05468114828448334,
+    "n_increase": 49,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.09653703324691588,
+     "aniso 10.0, corr 500.0": 0.07715469420536997
+    }
+   },
+   "oracle": {
+    "n_pairs": 60,
+    "mean_change": 0.81395667831103,
+    "median_change": 0.404939626455307,
+    "n_increase": 58,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.852889721552531,
+     "aniso 10.0, corr 500.0": 0.7750236350695291
+    }
+   },
+   "deployable": {
+    "n_pairs": 60,
+    "mean_change": 0.020226366996765218,
+    "median_change": 0.015744428634643537,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.028642061233520623,
+     "aniso 10.0, corr 500.0": 0.011810672760009815
+    }
+   }
+  },
+  "Fourier operator": {
+   "plume_ssim": {
+    "n_pairs": 60,
+    "mean_change": 0.08731290213937246,
+    "median_change": 0.07069475989953983,
+    "n_increase": 50,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.08884242528051757,
+     "aniso 10.0, corr 500.0": 0.0857833789982274
+    }
+   },
+   "oracle": {
+    "n_pairs": 60,
+    "mean_change": 0.0632026431063811,
+    "median_change": 0.05362703830003737,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.06134449094533921,
+     "aniso 10.0, corr 500.0": 0.06506079526742299
+    }
+   },
+   "deployable": {
+    "n_pairs": 60,
+    "mean_change": 0.020219528276473282,
+    "median_change": 0.019606277942657485,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.018854686945676803,
+     "aniso 10.0, corr 500.0": 0.02158436960726977
+    }
+   }
+  },
+  "DeepONet": {
+   "plume_ssim": {
+    "n_pairs": 60,
+    "mean_change": 0.127339719955371,
+    "median_change": 0.07495886441150221,
+    "n_increase": 57,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.13714637150106024,
+     "aniso 10.0, corr 500.0": 0.11753306840968177
+    }
+   },
+   "oracle": {
+    "n_pairs": 60,
+    "mean_change": 0.013203056310836268,
+    "median_change": 0.012093182830139992,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.01321256117592081,
+     "aniso 10.0, corr 500.0": 0.013193551445751728
+    }
+   },
+   "deployable": {
+    "n_pairs": 60,
+    "mean_change": 0.01150823161895581,
+    "median_change": 0.01157228582771494,
+    "n_increase": 60,
+    "cell_means": {
+     "aniso 5.0, corr 500.0": 0.011643150105490352,
+     "aniso 10.0, corr 500.0": 0.01137331313242127
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+  "risk_levels": {
+    "0.05": {
+      "delta_calibrated": 2.883523464202881,
+      "iid_empirical_risk": 1.0989042520523071,
+      "ood_empirical_risk": 1.1025370359420776,
+      "excess_risk_iid": -1.7846192121505737,
+      "excess_risk_ood": -1.7809864282608032,
+      "iid_fraction_within_delta": 1.0,
+      "ood_fraction_within_delta": 1.0,
+      "attained": false
+    },
+    "0.10": {
+      "delta_calibrated": 2.148037910461426,
+      "iid_empirical_risk": 1.0989042520523071,
+      "ood_empirical_risk": 1.1025370359420776,
+      "excess_risk_iid": -1.0491336584091187,
+      "excess_risk_ood": -1.0455008745193481,
+      "iid_fraction_within_delta": 0.8909090909090909,
+      "ood_fraction_within_delta": 0.9814814814814815,
+      "attained": true
+    },
+    "0.20": {
+      "delta_calibrated": 1.8189811706542969,
+      "iid_empirical_risk": 1.0989042520523071,
+      "ood_empirical_risk": 1.1025370359420776,
+      "excess_risk_iid": -0.7200769186019897,
+      "excess_risk_ood": -0.7164441347122192,
+      "iid_fraction_within_delta": 0.8181818181818182,
+      "ood_fraction_within_delta": 0.8666666666666667,
+      "attained": true
+    }
+  },
+  "notes": [
+    "delta_calibrated is the CRC-calibrated plume-MAE tolerance lambda.",
+    "Excess risk is reported as empirical mean plume MAE minus delta_calibrated."
+  ]
+}

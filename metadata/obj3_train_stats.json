@@ -1,0 +1,10 @@
+{
+  "n_train_params": 76,
+  "n_train_files": 380,
+  "file_glob": "real_*.npz",
+  "use_logK": true,
+  "eps_k": 1e-06,
+  "k_mean": 2.9787892451966926,
+  "k_std": 0.2853913640670156,
+  "c_max": 2521830912.0
+}

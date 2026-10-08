@@ -1,0 +1,120 @@
+{
+ "checkpoints": "det_ensemble, 5 members, trained and validated on realizations 1-3",
+ "unseen_realizations": [
+  4,
+  5
+ ],
+ "twin_free_pooled": {
+  "iid_test": {
+   "n": 44,
+   "plume_ssim": 0.5197494241773668,
+   "plume_ssim_main_protocol_same_fields": 0.7369462647839735
+  },
+  "ood_test": {
+   "n": 108,
+   "plume_ssim": 0.5390683906126901,
+   "plume_ssim_main_protocol_same_fields": 0.7094329621087303
+  },
+  "auroc_oracle": {
+   "auroc": 0.6003787878787878,
+   "settings": [
+    4,
+    9
+   ],
+   "inference": "descriptive only"
+  },
+  "auroc_deployable": {
+   "auroc": 0.5909090909090909,
+   "settings": [
+    4,
+    9
+   ],
+   "inference": "descriptive only"
+  }
+ },
+ "twin_free_paired_variance": {
+  "plume_ssim": {
+   "n_pairs": 24,
+   "mean_change": 0.11587276716051857,
+   "n_increase": 23
+  },
+  "oracle": {
+   "n_pairs": 24,
+   "mean_change": 0.03150059685111044,
+   "n_increase": 18
+  },
+  "deployable": {
+   "n_pairs": 24,
+   "mean_change": 0.02308553159236912,
+   "n_increase": 24
+  }
+ },
+ "seen_pattern_effect": {
+  "plume_ssim": {
+   "n_configs": 54,
+   "control_gap_seen_minus_unseen": 0.0756137685018783,
+   "main_protocol_gap_difficulty_only": -0.0063365259311032995,
+   "seen_pattern_effect_net": 0.08195029443298162,
+   "n_configs_positive": 54
+  },
+  "oracle": {
+   "n_configs": 54,
+   "control_gap_seen_minus_unseen": -0.5971719455737391,
+   "main_protocol_gap_difficulty_only": -0.00921710181291457,
+   "seen_pattern_effect_net": -0.5879548437608245,
+   "n_configs_positive": 0
+  },
+  "deployable": {
+   "n_configs": 54,
+   "control_gap_seen_minus_unseen": -0.46934887205377046,
+   "main_protocol_gap_difficulty_only": -0.003991093837920538,
+   "seen_pattern_effect_net": -0.46535777821585,
+   "n_configs_positive": 0
+  }
+ },
+ "pattern_novelty_auroc": {
+  "ood_test_oracle": {
+   "auroc_unseen_vs_seen": 1.0,
+   "n_seen": 162,
+   "n_unseen": 108
+  },
+  "ood_test_deployable": {
+   "auroc_unseen_vs_seen": 1.0,
+   "n_seen": 162,
+   "n_unseen": 108
+  },
+  "iid_test_oracle": {
+   "auroc_unseen_vs_seen": 1.0,
+   "n_seen": 66,
+   "n_unseen": 44
+  },
+  "iid_test_deployable": {
+   "auroc_unseen_vs_seen": 1.0,
+   "n_seen": 66,
+   "n_unseen": 44
+  }
+ },
+ "pattern_novelty_auroc_null_baseline_main_protocol": {
+  "ood_test_oracle": {
+   "auroc_r45_vs_r123_all_seen": 0.586076817558299,
+   "n_seen": 162,
+   "n_unseen": 108
+  },
+  "ood_test_deployable": {
+   "auroc_r45_vs_r123_all_seen": 0.6049382716049383,
+   "n_seen": 162,
+   "n_unseen": 108
+  },
+  "iid_test_oracle": {
+   "auroc_r45_vs_r123_all_seen": 0.5454545454545454,
+   "n_seen": 66,
+   "n_unseen": 44
+  },
+  "iid_test_deployable": {
+   "auroc_r45_vs_r123_all_seen": 0.6322314049586777,
+   "n_seen": 66,
+   "n_unseen": 44
+  }
+ },
+ "independent_units_note": "Spatial fields share random draw identifiers across settings. Only two evaluation draws are held out; results are descriptive."
+}

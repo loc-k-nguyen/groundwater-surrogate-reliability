@@ -1,0 +1,8 @@
+{
+  "cache_certification": "<SCRATCH_ROOT>/PhD_Project/experiments/obj3/journal/runs/obj3_boundaryfix_20260818/certification/prediction_cache_certification.json",
+  "deterministic_seed_count": 10,
+  "ensemble_iid_n": 110,
+  "ensemble_ood_n": 270,
+  "mcdrop_seed_count": 10,
+  "status": "BOUNDARY_FIXED_AGGREGATES_CERTIFIED"
+}

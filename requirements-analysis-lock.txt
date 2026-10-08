@@ -1,0 +1,6 @@
+# Exact stack used to regenerate and test the v4 summary figures.
+# Python 3.9.25; Windows; no GPU work is required by build_v4_analysis.py.
+numpy==1.26.4
+scipy==1.13.1
+scikit-image==0.24.0
+matplotlib==3.9.4

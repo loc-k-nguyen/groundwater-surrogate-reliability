@@ -1,0 +1,104 @@
+{
+  "alpha": 0.1,
+  "gamma_sweep": {
+    "0.01": {
+      "iid": {
+        "plume_pixel_coverage": 0.9650408886224083,
+        "global_pixel_coverage": 0.8357203681818178,
+        "plume_mean_width": 8.084560064835982,
+        "sample_plume_mae": 1.0989042699337006,
+        "sample_miss_rate": 0.11818181818181818,
+        "n_samples": 110
+      },
+      "ood": {
+        "plume_pixel_coverage": 0.9629422667365712,
+        "global_pixel_coverage": 0.8242615271604938,
+        "plume_mean_width": 7.503177478578356,
+        "sample_plume_mae": 1.1025371160772113,
+        "sample_miss_rate": 0.10740740740740741,
+        "n_samples": 270
+      }
+    },
+    "0.02": {
+      "iid": {
+        "plume_pixel_coverage": 0.9633919185448907,
+        "global_pixel_coverage": 0.8288548924242424,
+        "plume_mean_width": 7.8891068458557125,
+        "sample_plume_mae": 1.0989042699337006,
+        "sample_miss_rate": 0.10909090909090909,
+        "n_samples": 110
+      },
+      "ood": {
+        "plume_pixel_coverage": 0.9604771707212185,
+        "global_pixel_coverage": 0.8182443654320987,
+        "plume_mean_width": 7.32107403896473,
+        "sample_plume_mae": 1.1025371160772113,
+        "sample_miss_rate": 0.1037037037037037,
+        "n_samples": 270
+      }
+    },
+    "0.05": {
+      "iid": {
+        "plume_pixel_coverage": 0.9600011751257297,
+        "global_pixel_coverage": 0.8157540666666667,
+        "plume_mean_width": 7.553352039510553,
+        "sample_plume_mae": 1.0989042699337006,
+        "sample_miss_rate": 0.10909090909090909,
+        "n_samples": 110
+      },
+      "ood": {
+        "plume_pixel_coverage": 0.9555744974237987,
+        "global_pixel_coverage": 0.8106307092592593,
+        "plume_mean_width": 7.114091922618725,
+        "sample_plume_mae": 1.1025371160772113,
+        "sample_miss_rate": 0.1037037037037037,
+        "n_samples": 270
+      }
+    },
+    "0.10": {
+      "iid": {
+        "plume_pixel_coverage": 0.9507276976768458,
+        "global_pixel_coverage": 0.7988643893939396,
+        "plume_mean_width": 7.946444238315929,
+        "sample_plume_mae": 1.0989042699337006,
+        "sample_miss_rate": 0.10909090909090909,
+        "n_samples": 110
+      },
+      "ood": {
+        "plume_pixel_coverage": 0.941313671164106,
+        "global_pixel_coverage": 0.7938854419753086,
+        "plume_mean_width": 6.9035979085498385,
+        "sample_plume_mae": 1.1025371160772113,
+        "sample_miss_rate": 0.1037037037037037,
+        "n_samples": 270
+      }
+    }
+  },
+  "best_gamma": "0.10",
+  "best_result": {
+    "iid": {
+      "plume_pixel_coverage": 0.9507276976768458,
+      "global_pixel_coverage": 0.7988643893939396,
+      "plume_mean_width": 7.946444238315929,
+      "sample_plume_mae": 1.0989042699337006,
+      "sample_miss_rate": 0.10909090909090909,
+      "n_samples": 110
+    },
+    "ood": {
+      "plume_pixel_coverage": 0.941313671164106,
+      "global_pixel_coverage": 0.7938854419753086,
+      "plume_mean_width": 6.9035979085498385,
+      "sample_plume_mae": 1.1025371160772113,
+      "sample_miss_rate": 0.1037037037037037,
+      "n_samples": 270
+    },
+    "iid_final_alpha": 0.020001000000000338,
+    "ood_final_alpha": 1.0000000011528565e-06,
+    "iid_final_quantile": 5.903454303741455,
+    "ood_final_quantile": 14.321868896484375
+  },
+  "notes": [
+    "Calibration scores use the same plume-masked residual construction as the conference conformal setup.",
+    "IID and OOD sequences are ordered by (param_id, real_id) before online updates."
+  ]
+}

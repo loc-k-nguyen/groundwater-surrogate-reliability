@@ -1,0 +1,1124 @@
+{
+  "aggregate": {
+    "ensemble_var_mean": 0.07021244822687099,
+    "ensemble_var_std": 0.006358073698266668,
+    "gaussian_crps_mean": 1.2408650520691344,
+    "gaussian_crps_n_plume_pixels": 143934645,
+    "gaussian_crps_std": 1.2732238885144371,
+    "global_ssim_mean": 0.9013757910989428,
+    "global_ssim_std": 0.02334558846649349,
+    "mass_error_mean": 0.47418442618111345,
+    "mass_error_std": 0.013161068197738506,
+    "n_members": 5,
+    "n_samples": 110,
+    "plume_ensemble_std_mean": 0.169984946874055,
+    "plume_ssim_mean": 0.7334103576540896,
+    "plume_ssim_std": 0.1021161680008109,
+    "uncertainty_error_iou_mean": 0.32739855348420094,
+    "uncertainty_error_iou_std": 0.0768256433411099,
+    "uncertainty_error_iou_top_quantile": 0.75
+  },
+  "per_sample": [
+    {
+      "mean_ensemble_var": 0.06357207633394454,
+      "mean_global_ssim": 0.8992699680284311,
+      "mean_mass_error": 0.47981793530859684,
+      "mean_plume_ssim": 0.6718907226021483,
+      "param_id": "param_128",
+      "plume_ensemble_std": 0.14099979400634766,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.4151036389307443
+    },
+    {
+      "mean_ensemble_var": 0.06627699977537238,
+      "mean_global_ssim": 0.8991913872156858,
+      "mean_mass_error": 0.49539432327704747,
+      "mean_plume_ssim": 0.6686326634902141,
+      "param_id": "param_128",
+      "plume_ensemble_std": 0.1416507512331009,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3695558717286576
+    },
+    {
+      "mean_ensemble_var": 0.06793658832233788,
+      "mean_global_ssim": 0.8996174407270746,
+      "mean_mass_error": 0.49067103765635445,
+      "mean_plume_ssim": 0.6738593645279447,
+      "param_id": "param_128",
+      "plume_ensemble_std": 0.1408185213804245,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.43932199843413033
+    },
+    {
+      "mean_ensemble_var": 0.06995470843208512,
+      "mean_global_ssim": 0.9004017090325475,
+      "mean_mass_error": 0.4809253412693421,
+      "mean_plume_ssim": 0.6828559641947528,
+      "param_id": "param_128",
+      "plume_ensemble_std": 0.16368329524993896,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.36587865337942577
+    },
+    {
+      "mean_ensemble_var": 0.05843165396197605,
+      "mean_global_ssim": 0.8994340223642066,
+      "mean_mass_error": 0.4743596703592634,
+      "mean_plume_ssim": 0.6790166108385587,
+      "param_id": "param_128",
+      "plume_ensemble_std": 0.13275757431983948,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.4496280631601566
+    },
+    {
+      "mean_ensemble_var": 0.06357207633394454,
+      "mean_global_ssim": 0.9266994978278692,
+      "mean_mass_error": 0.47979085462442983,
+      "mean_plume_ssim": 0.7807032594965813,
+      "param_id": "param_129",
+      "plume_ensemble_std": 0.156021386384964,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.3821105978340823
+    },
+    {
+      "mean_ensemble_var": 0.06627699977537238,
+      "mean_global_ssim": 0.9266111544774942,
+      "mean_mass_error": 0.49536541698670633,
+      "mean_plume_ssim": 0.7834683835083496,
+      "param_id": "param_129",
+      "plume_ensemble_std": 0.16420239210128784,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.35211952409676506
+    },
+    {
+      "mean_ensemble_var": 0.06793658832233788,
+      "mean_global_ssim": 0.9273317924326223,
+      "mean_mass_error": 0.4906437596493607,
+      "mean_plume_ssim": 0.7851303776739258,
+      "param_id": "param_129",
+      "plume_ensemble_std": 0.16602791845798492,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.40647824556436085
+    },
+    {
+      "mean_ensemble_var": 0.06995470843208512,
+      "mean_global_ssim": 0.9249231481711772,
+      "mean_mass_error": 0.48089006324222217,
+      "mean_plume_ssim": 0.786421409325094,
+      "param_id": "param_129",
+      "plume_ensemble_std": 0.17821140587329865,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3246720426133566
+    },
+    {
+      "mean_ensemble_var": 0.05843165396197605,
+      "mean_global_ssim": 0.9268988168036166,
+      "mean_mass_error": 0.4743279577676529,
+      "mean_plume_ssim": 0.7869696335978122,
+      "param_id": "param_129",
+      "plume_ensemble_std": 0.15412159264087677,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.4045579996924694
+    },
+    {
+      "mean_ensemble_var": 0.06357207633394454,
+      "mean_global_ssim": 0.9345963704046711,
+      "mean_mass_error": 0.4799319415642584,
+      "mean_plume_ssim": 0.8431550346537487,
+      "param_id": "param_130",
+      "plume_ensemble_std": 0.19051997363567352,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.25680623934822816
+    },
+    {
+      "mean_ensemble_var": 0.06627699977537238,
+      "mean_global_ssim": 0.9319881825724365,
+      "mean_mass_error": 0.4954674296585982,
+      "mean_plume_ssim": 0.837602272193656,
+      "param_id": "param_130",
+      "plume_ensemble_std": 0.19837933778762817,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.2772058112057853
+    },
+    {
+      "mean_ensemble_var": 0.06793658832233788,
+      "mean_global_ssim": 0.933248185289337,
+      "mean_mass_error": 0.4907921041135424,
+      "mean_plume_ssim": 0.8398748108828856,
+      "param_id": "param_130",
+      "plume_ensemble_std": 0.20513814687728882,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.24249362377631972
+    },
+    {
+      "mean_ensemble_var": 0.06995470843208512,
+      "mean_global_ssim": 0.9323622332568975,
+      "mean_mass_error": 0.48099716536429354,
+      "mean_plume_ssim": 0.8435025339806027,
+      "param_id": "param_130",
+      "plume_ensemble_std": 0.21089857816696167,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.29069593583119774
+    },
+    {
+      "mean_ensemble_var": 0.05843165396197605,
+      "mean_global_ssim": 0.9340539107120293,
+      "mean_mass_error": 0.4744520129509713,
+      "mean_plume_ssim": 0.8442671061648818,
+      "param_id": "param_130",
+      "plume_ensemble_std": 0.1892317235469818,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.2443065662714516
+    },
+    {
+      "mean_ensemble_var": 0.06357207633394454,
+      "mean_global_ssim": 0.9018970237045858,
+      "mean_mass_error": 0.47979548921425946,
+      "mean_plume_ssim": 0.8406309312509183,
+      "param_id": "param_131",
+      "plume_ensemble_std": 0.22149239480495453,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.19336118221433454
+    },
+    {
+      "mean_ensemble_var": 0.06627699977537238,
+      "mean_global_ssim": 0.8959207930926112,
+      "mean_mass_error": 0.49533250937218354,
+      "mean_plume_ssim": 0.8333189819911736,
+      "param_id": "param_131",
+      "plume_ensemble_std": 0.23150692880153656,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.2106148538181358
+    },
+    {
+      "mean_ensemble_var": 0.06793658832233788,
+      "mean_global_ssim": 0.8993511257248074,
+      "mean_mass_error": 0.49066726197119104,
+      "mean_plume_ssim": 0.8396186560560541,
+      "param_id": "param_131",
+      "plume_ensemble_std": 0.233939990401268,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.19663556130739818
+    },
+    {
+      "mean_ensemble_var": 0.06995470843208512,
+      "mean_global_ssim": 0.8964531547475887,
+      "mean_mass_error": 0.4808408029503116,
+      "mean_plume_ssim": 0.833921085641888,
+      "param_id": "param_131",
+      "plume_ensemble_std": 0.2345981001853943,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.162635784364959
+    },
+    {
+      "mean_ensemble_var": 0.05843165396197605,
+      "mean_global_ssim": 0.9005602367232176,
+      "mean_mass_error": 0.4743007805145046,
+      "mean_plume_ssim": 0.8414354412796158,
+      "param_id": "param_131",
+      "plume_ensemble_std": 0.2181195616722107,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.2019115713506752
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.859637668518168,
+      "mean_mass_error": 0.475331548298177,
+      "mean_plume_ssim": 0.5573064830789946,
+      "param_id": "param_132",
+      "plume_ensemble_std": 0.13080167770385742,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.3480367850709336
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.8596805107035399,
+      "mean_mass_error": 0.46654465852834165,
+      "mean_plume_ssim": 0.5503884604178634,
+      "param_id": "param_132",
+      "plume_ensemble_std": 0.13765203952789307,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.31272388682219326
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.8634441218453093,
+      "mean_mass_error": 0.4871039204846348,
+      "mean_plume_ssim": 0.5501456521270728,
+      "param_id": "param_132",
+      "plume_ensemble_std": 0.14531448483467102,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.3661725172251873
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.8549489951376463,
+      "mean_mass_error": 0.45177331481709293,
+      "mean_plume_ssim": 0.5696113091639772,
+      "param_id": "param_132",
+      "plume_ensemble_std": 0.14668963849544525,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3114006916187481
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.8557492735704664,
+      "mean_mass_error": 0.4713852993506081,
+      "mean_plume_ssim": 0.5729298448974334,
+      "param_id": "param_132",
+      "plume_ensemble_std": 0.15363678336143494,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.3189618173053954
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.8739824837813012,
+      "mean_mass_error": 0.47533757796354165,
+      "mean_plume_ssim": 0.6137012759043714,
+      "param_id": "param_133",
+      "plume_ensemble_std": 0.134085014462471,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.3485986587396726
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.8734151761607972,
+      "mean_mass_error": 0.46665397067749625,
+      "mean_plume_ssim": 0.6087502586599352,
+      "param_id": "param_133",
+      "plume_ensemble_std": 0.14042127132415771,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3214583756024782
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.8767560260898211,
+      "mean_mass_error": 0.4871015981458924,
+      "mean_plume_ssim": 0.6085729358913755,
+      "param_id": "param_133",
+      "plume_ensemble_std": 0.14858922362327576,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.38163346372225077
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.8693874475499718,
+      "mean_mass_error": 0.45193586929973895,
+      "mean_plume_ssim": 0.6299464622134906,
+      "param_id": "param_133",
+      "plume_ensemble_std": 0.15084122121334076,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3292482968748916
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.8705848790109809,
+      "mean_mass_error": 0.4714407230534863,
+      "mean_plume_ssim": 0.6297187881127314,
+      "param_id": "param_133",
+      "plume_ensemble_std": 0.16084827482700348,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.33752996981139843
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.8772028972111175,
+      "mean_mass_error": 0.47533462006429,
+      "mean_plume_ssim": 0.6417535833709533,
+      "param_id": "param_134",
+      "plume_ensemble_std": 0.14007039368152618,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.35104165066675186
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.876608987555328,
+      "mean_mass_error": 0.4665741575536602,
+      "mean_plume_ssim": 0.6381511382899671,
+      "param_id": "param_134",
+      "plume_ensemble_std": 0.14604581892490387,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.32836941171940914
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.8798565512324111,
+      "mean_mass_error": 0.4871072523452111,
+      "mean_plume_ssim": 0.6380101752088866,
+      "param_id": "param_134",
+      "plume_ensemble_std": 0.15634018182754517,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.3817014133760037
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.8723998133524262,
+      "mean_mass_error": 0.4518523353473269,
+      "mean_plume_ssim": 0.6491735984491721,
+      "param_id": "param_134",
+      "plume_ensemble_std": 0.1559392511844635,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3329305167947212
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.8738374883005092,
+      "mean_mass_error": 0.4714049859077019,
+      "mean_plume_ssim": 0.6519342242216388,
+      "param_id": "param_134",
+      "plume_ensemble_std": 0.16572071611881256,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.32889972046895655
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.9130031354349906,
+      "mean_mass_error": 0.4753155968692219,
+      "mean_plume_ssim": 0.7647278834012241,
+      "param_id": "param_135",
+      "plume_ensemble_std": 0.15824005007743835,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.35762803554171085
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.9145920441061474,
+      "mean_mass_error": 0.4667190876558576,
+      "mean_plume_ssim": 0.7731389155829159,
+      "param_id": "param_135",
+      "plume_ensemble_std": 0.16727761924266815,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.37888759455854165
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.917500439628086,
+      "mean_mass_error": 0.48707482938694446,
+      "mean_plume_ssim": 0.7706045134663805,
+      "param_id": "param_135",
+      "plume_ensemble_std": 0.17960192263126373,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.39253060262164174
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.9100840126534065,
+      "mean_mass_error": 0.45206724896381467,
+      "mean_plume_ssim": 0.7794947740368536,
+      "param_id": "param_135",
+      "plume_ensemble_std": 0.1765764057636261,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.33771411586231137
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.9125833311682188,
+      "mean_mass_error": 0.47149961652075434,
+      "mean_plume_ssim": 0.7771120737491298,
+      "param_id": "param_135",
+      "plume_ensemble_std": 0.19444146752357483,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.33848349653682924
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.9347416326736686,
+      "mean_mass_error": 0.47523428453492406,
+      "mean_plume_ssim": 0.8465150307574306,
+      "param_id": "param_136",
+      "plume_ensemble_std": 0.19784314930438995,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.2693734177766698
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.931473971061892,
+      "mean_mass_error": 0.4661587944301697,
+      "mean_plume_ssim": 0.842922675287886,
+      "param_id": "param_136",
+      "plume_ensemble_std": 0.20514613389968872,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.27770094268846174
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.9327665202102324,
+      "mean_mass_error": 0.48709478418270563,
+      "mean_plume_ssim": 0.8376632766322946,
+      "param_id": "param_136",
+      "plume_ensemble_std": 0.21766115725040436,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.22907301056613463
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.9304136572812588,
+      "mean_mass_error": 0.45150271931645447,
+      "mean_plume_ssim": 0.8453789468201163,
+      "param_id": "param_136",
+      "plume_ensemble_std": 0.21170689165592194,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.28571975947314077
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.9333732564314472,
+      "mean_mass_error": 0.4711756804887148,
+      "mean_plume_ssim": 0.8475528837762729,
+      "param_id": "param_136",
+      "plume_ensemble_std": 0.22211326658725739,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.2681084548344842
+    },
+    {
+      "mean_ensemble_var": 0.06935954248238406,
+      "mean_global_ssim": 0.908302294401447,
+      "mean_mass_error": 0.47519286365429964,
+      "mean_plume_ssim": 0.8517702808416616,
+      "param_id": "param_137",
+      "plume_ensemble_std": 0.22735217213630676,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.21675976361366542
+    },
+    {
+      "mean_ensemble_var": 0.07771298635451698,
+      "mean_global_ssim": 0.8843235040733449,
+      "mean_mass_error": 0.4699025659057544,
+      "mean_plume_ssim": 0.8354815535174955,
+      "param_id": "param_137",
+      "plume_ensemble_std": 0.2396537959575653,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.19567564736511667
+    },
+    {
+      "mean_ensemble_var": 0.07863718711196534,
+      "mean_global_ssim": 0.9024972113924712,
+      "mean_mass_error": 0.48702889719771636,
+      "mean_plume_ssim": 0.8496910058473109,
+      "param_id": "param_137",
+      "plume_ensemble_std": 0.24245120584964752,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.19223337255205705
+    },
+    {
+      "mean_ensemble_var": 0.08057962440897005,
+      "mean_global_ssim": 0.8921147651741435,
+      "mean_mass_error": 0.45181534955168684,
+      "mean_plume_ssim": 0.8390492376290973,
+      "param_id": "param_137",
+      "plume_ensemble_std": 0.24426400661468506,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.2105809123358424
+    },
+    {
+      "mean_ensemble_var": 0.0760941306121787,
+      "mean_global_ssim": 0.9006459146777834,
+      "mean_mass_error": 0.4713222636934685,
+      "mean_plume_ssim": 0.845137461369281,
+      "param_id": "param_137",
+      "plume_ensemble_std": 0.24435526132583618,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.2275057151105634
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.8847427993023612,
+      "mean_mass_error": 0.4695254306723637,
+      "mean_plume_ssim": 0.6042935858915593,
+      "param_id": "param_144",
+      "plume_ensemble_std": 0.1294642686843872,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.3837001485962997
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.8828428327532523,
+      "mean_mass_error": 0.4937755709578676,
+      "mean_plume_ssim": 0.593119949702936,
+      "param_id": "param_144",
+      "plume_ensemble_std": 0.12223945558071136,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3622517901457035
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.8880728025815032,
+      "mean_mass_error": 0.484663670034826,
+      "mean_plume_ssim": 0.615067072513107,
+      "param_id": "param_144",
+      "plume_ensemble_std": 0.11439620703458786,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.3853966801814326
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.8800719179527878,
+      "mean_mass_error": 0.47041893767054205,
+      "mean_plume_ssim": 0.6091696858484412,
+      "param_id": "param_144",
+      "plume_ensemble_std": 0.12590391933918,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.40457557169427666
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.8851037705031324,
+      "mean_mass_error": 0.46368905276723527,
+      "mean_plume_ssim": 0.6112667741576933,
+      "param_id": "param_144",
+      "plume_ensemble_std": 0.12099864333868027,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.3988982567135308
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.8936442331726039,
+      "mean_mass_error": 0.46952293987800714,
+      "mean_plume_ssim": 0.6391650899609511,
+      "param_id": "param_145",
+      "plume_ensemble_std": 0.13399295508861542,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.38090944068610716
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.8922782614808024,
+      "mean_mass_error": 0.4937721376808403,
+      "mean_plume_ssim": 0.6327973287114771,
+      "param_id": "param_145",
+      "plume_ensemble_std": 0.12634065747261047,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3723939997184733
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.8958770025096722,
+      "mean_mass_error": 0.4846609738653986,
+      "mean_plume_ssim": 0.6488590306810706,
+      "param_id": "param_145",
+      "plume_ensemble_std": 0.1177576407790184,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.39721680394532405
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.8888935227835805,
+      "mean_mass_error": 0.4704157295502987,
+      "mean_plume_ssim": 0.6444441219575695,
+      "param_id": "param_145",
+      "plume_ensemble_std": 0.12864112854003906,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.4029772856533974
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.8934374324113251,
+      "mean_mass_error": 0.4636864302122367,
+      "mean_plume_ssim": 0.6483648012569533,
+      "param_id": "param_145",
+      "plume_ensemble_std": 0.12346822023391724,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.41011240175576785
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.8961991145721067,
+      "mean_mass_error": 0.46953932692635436,
+      "mean_plume_ssim": 0.6711189648096026,
+      "param_id": "param_146",
+      "plume_ensemble_std": 0.14079925417900085,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.3961128218162194
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.8944440125658397,
+      "mean_mass_error": 0.4937815209089147,
+      "mean_plume_ssim": 0.6612724602146405,
+      "param_id": "param_146",
+      "plume_ensemble_std": 0.13438984751701355,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3653186095796345
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.8983461569949754,
+      "mean_mass_error": 0.48467916820835916,
+      "mean_plume_ssim": 0.6777886542095511,
+      "param_id": "param_146",
+      "plume_ensemble_std": 0.12513452768325806,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.4215121471164387
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.8911917967553654,
+      "mean_mass_error": 0.47042862209492453,
+      "mean_plume_ssim": 0.6702449221446973,
+      "param_id": "param_146",
+      "plume_ensemble_std": 0.13442307710647583,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.41691165483254244
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.8960073404059808,
+      "mean_mass_error": 0.46369671039759475,
+      "mean_plume_ssim": 0.6759470591079902,
+      "param_id": "param_146",
+      "plume_ensemble_std": 0.1299666166305542,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.44518167885240634
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.9279401020140281,
+      "mean_mass_error": 0.4695211814816981,
+      "mean_plume_ssim": 0.7762098323762625,
+      "param_id": "param_147",
+      "plume_ensemble_std": 0.15702837705612183,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.40717805413894453
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.9254969763325361,
+      "mean_mass_error": 0.4937528288025587,
+      "mean_plume_ssim": 0.7810890105296043,
+      "param_id": "param_147",
+      "plume_ensemble_std": 0.15484662353992462,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.37702397852433855
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.9271778902567034,
+      "mean_mass_error": 0.4846587433776273,
+      "mean_plume_ssim": 0.7838593951534857,
+      "param_id": "param_147",
+      "plume_ensemble_std": 0.14476542174816132,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.4001128431618436
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.9230734803265221,
+      "mean_mass_error": 0.47039463747686794,
+      "mean_plume_ssim": 0.7817891103297834,
+      "param_id": "param_147",
+      "plume_ensemble_std": 0.14951978623867035,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.41266878647374744
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.9261818786656483,
+      "mean_mass_error": 0.46367304259937525,
+      "mean_plume_ssim": 0.7869986741318374,
+      "param_id": "param_147",
+      "plume_ensemble_std": 0.14586998522281647,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.4181153527000532
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.9384242400099884,
+      "mean_mass_error": 0.4696834325672669,
+      "mean_plume_ssim": 0.8482375027397595,
+      "param_id": "param_148",
+      "plume_ensemble_std": 0.1907183974981308,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.24898398321701795
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.9343011152156758,
+      "mean_mass_error": 0.4938390755613193,
+      "mean_plume_ssim": 0.8418777593682211,
+      "param_id": "param_148",
+      "plume_ensemble_std": 0.18910956382751465,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.27819230180493076
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.9377637238253846,
+      "mean_mass_error": 0.4848244952282617,
+      "mean_plume_ssim": 0.8480761171194722,
+      "param_id": "param_148",
+      "plume_ensemble_std": 0.17634135484695435,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.27097580920892483
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.9362586459074074,
+      "mean_mass_error": 0.4704778638939417,
+      "mean_plume_ssim": 0.8479697272411485,
+      "param_id": "param_148",
+      "plume_ensemble_std": 0.1805688589811325,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.26239927136908553
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.935633227849517,
+      "mean_mass_error": 0.4637419038118988,
+      "mean_plume_ssim": 0.8450587008396216,
+      "param_id": "param_148",
+      "plume_ensemble_std": 0.18562999367713928,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.27249390979110244
+    },
+    {
+      "mean_ensemble_var": 0.06559570310905426,
+      "mean_global_ssim": 0.8781023895553378,
+      "mean_mass_error": 0.5091334473117847,
+      "mean_plume_ssim": 0.8202439619678,
+      "param_id": "param_149",
+      "plume_ensemble_std": 0.21827316284179688,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.2221057468004336
+    },
+    {
+      "mean_ensemble_var": 0.06804266054786048,
+      "mean_global_ssim": 0.9012684443962641,
+      "mean_mass_error": 0.4937139743512053,
+      "mean_plume_ssim": 0.8425291775694166,
+      "param_id": "param_149",
+      "plume_ensemble_std": 0.22786900401115417,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.20892557864606898
+    },
+    {
+      "mean_ensemble_var": 0.0602722193545248,
+      "mean_global_ssim": 0.9060937296935857,
+      "mean_mass_error": 0.48468345115045464,
+      "mean_plume_ssim": 0.8459594336955842,
+      "param_id": "param_149",
+      "plume_ensemble_std": 0.210011288523674,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.19727559050114624
+    },
+    {
+      "mean_ensemble_var": 0.071332732605367,
+      "mean_global_ssim": 0.9023294389623416,
+      "mean_mass_error": 0.47033560698931554,
+      "mean_plume_ssim": 0.8468782939148106,
+      "param_id": "param_149",
+      "plume_ensemble_std": 0.22167101502418518,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.24147776713239177
+    },
+    {
+      "mean_ensemble_var": 0.06430951262711423,
+      "mean_global_ssim": 0.9028023555117405,
+      "mean_mass_error": 0.46363909359363076,
+      "mean_plume_ssim": 0.8440528181560317,
+      "param_id": "param_149",
+      "plume_ensemble_std": 0.22228263318538666,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.20284566837628945
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.8724137226824235,
+      "mean_mass_error": 0.47373856337288056,
+      "mean_plume_ssim": 0.5781884682167413,
+      "param_id": "param_150",
+      "plume_ensemble_std": 0.121896892786026,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.40146520776843336
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.8670486959667554,
+      "mean_mass_error": 0.47123657831249355,
+      "mean_plume_ssim": 0.5599644399664969,
+      "param_id": "param_150",
+      "plume_ensemble_std": 0.1287708580493927,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3888999315773287
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.880213251681231,
+      "mean_mass_error": 0.48701718079818596,
+      "mean_plume_ssim": 0.5929241841690203,
+      "param_id": "param_150",
+      "plume_ensemble_std": 0.12353349477052689,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.3934069868764864
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.8620329669253158,
+      "mean_mass_error": 0.4524876191138182,
+      "mean_plume_ssim": 0.6027148917398769,
+      "param_id": "param_150",
+      "plume_ensemble_std": 0.1544685959815979,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3502479594697029
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.866098811390062,
+      "mean_mass_error": 0.4536312530100304,
+      "mean_plume_ssim": 0.5740276750109415,
+      "param_id": "param_150",
+      "plume_ensemble_std": 0.13691528141498566,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.33501433170777645
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.883631809474422,
+      "mean_mass_error": 0.473735209192161,
+      "mean_plume_ssim": 0.6197627223310483,
+      "param_id": "param_151",
+      "plume_ensemble_std": 0.12655037641525269,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.41140365761337927
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.8780320877427142,
+      "mean_mass_error": 0.4712510595618172,
+      "mean_plume_ssim": 0.6070028510508029,
+      "param_id": "param_151",
+      "plume_ensemble_std": 0.1322913020849228,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.3992067900713527
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.8894349032727749,
+      "mean_mass_error": 0.48701395085371596,
+      "mean_plume_ssim": 0.6319727490900924,
+      "param_id": "param_151",
+      "plume_ensemble_std": 0.12744322419166565,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.4224726892635393
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.8717701525916831,
+      "mean_mass_error": 0.4524371986686912,
+      "mean_plume_ssim": 0.6484062885214205,
+      "param_id": "param_151",
+      "plume_ensemble_std": 0.16027095913887024,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.3613528491171321
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.8777064176891014,
+      "mean_mass_error": 0.4536548468164983,
+      "mean_plume_ssim": 0.6249008407127199,
+      "param_id": "param_151",
+      "plume_ensemble_std": 0.14012661576271057,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.35872065306452916
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.8870140310569451,
+      "mean_mass_error": 0.4737484209421182,
+      "mean_plume_ssim": 0.6550313188193081,
+      "param_id": "param_152",
+      "plume_ensemble_std": 0.13291452825069427,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.4139211394890177
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.8805497970581821,
+      "mean_mass_error": 0.4711872995626146,
+      "mean_plume_ssim": 0.6380611236017448,
+      "param_id": "param_152",
+      "plume_ensemble_std": 0.1389036476612091,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.37653787182994414
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.8922329783928682,
+      "mean_mass_error": 0.48703611513830886,
+      "mean_plume_ssim": 0.6590695570390978,
+      "param_id": "param_152",
+      "plume_ensemble_std": 0.13479377329349518,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.4333602604484528
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.8735485282856047,
+      "mean_mass_error": 0.45247707944923915,
+      "mean_plume_ssim": 0.6640375658619998,
+      "param_id": "param_152",
+      "plume_ensemble_std": 0.16585688292980194,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.38496680364943203
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.8802856109601823,
+      "mean_mass_error": 0.453630339956904,
+      "mean_plume_ssim": 0.64827756367035,
+      "param_id": "param_152",
+      "plume_ensemble_std": 0.14578963816165924,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.34989690278712343
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.9238032853607261,
+      "mean_mass_error": 0.47372389744601,
+      "mean_plume_ssim": 0.7629120354363209,
+      "param_id": "param_153",
+      "plume_ensemble_std": 0.153115376830101,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.4104364633024245
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.9177145814066872,
+      "mean_mass_error": 0.47121874199816033,
+      "mean_plume_ssim": 0.7705373874085926,
+      "param_id": "param_153",
+      "plume_ensemble_std": 0.15751522779464722,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.39458137099527496
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.9247241836241163,
+      "mean_mass_error": 0.48701021286296814,
+      "mean_plume_ssim": 0.7807210792983448,
+      "param_id": "param_153",
+      "plume_ensemble_std": 0.15893366932868958,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.4661409854128877
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.9036246714313724,
+      "mean_mass_error": 0.4522460185530541,
+      "mean_plume_ssim": 0.7678003080527235,
+      "param_id": "param_153",
+      "plume_ensemble_std": 0.1797930896282196,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.2929787655442517
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.9178208500463754,
+      "mean_mass_error": 0.4536529064061159,
+      "mean_plume_ssim": 0.7782995538515902,
+      "param_id": "param_153",
+      "plume_ensemble_std": 0.16127164661884308,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.4007445835246615
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.9414326364881291,
+      "mean_mass_error": 0.4738279112199615,
+      "mean_plume_ssim": 0.8508835823927496,
+      "param_id": "param_154",
+      "plume_ensemble_std": 0.18692733347415924,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.25199062557741486
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.9310791441712499,
+      "mean_mass_error": 0.47075169681027246,
+      "mean_plume_ssim": 0.84317340897677,
+      "param_id": "param_154",
+      "plume_ensemble_std": 0.19355134665966034,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.2546376005814184
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.9364531055893943,
+      "mean_mass_error": 0.4871902552940312,
+      "mean_plume_ssim": 0.83892615075064,
+      "param_id": "param_154",
+      "plume_ensemble_std": 0.19355306029319763,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.2755695918956879
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.9316039546544047,
+      "mean_mass_error": 0.4525018650571285,
+      "mean_plume_ssim": 0.8435131498607338,
+      "param_id": "param_154",
+      "plume_ensemble_std": 0.2057456225156784,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.27832808003212484
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.9326515234652527,
+      "mean_mass_error": 0.4534275257009906,
+      "mean_plume_ssim": 0.8436371400462632,
+      "param_id": "param_154",
+      "plume_ensemble_std": 0.2008514106273651,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.2913437034157758
+    },
+    {
+      "mean_ensemble_var": 0.06132467583178088,
+      "mean_global_ssim": 0.9137900477607778,
+      "mean_mass_error": 0.4737215895424001,
+      "mean_plume_ssim": 0.8529362039138836,
+      "param_id": "param_155",
+      "plume_ensemble_std": 0.2118937224149704,
+      "real_id": "real_001",
+      "uncertainty_error_iou": 0.2194757068335525
+    },
+    {
+      "mean_ensemble_var": 0.07800123973207328,
+      "mean_global_ssim": 0.9017525564320156,
+      "mean_mass_error": 0.4710075627322604,
+      "mean_plume_ssim": 0.8505361306482448,
+      "param_id": "param_155",
+      "plume_ensemble_std": 0.23516179621219635,
+      "real_id": "real_002",
+      "uncertainty_error_iou": 0.2105937446552346
+    },
+    {
+      "mean_ensemble_var": 0.07123369859845059,
+      "mean_global_ssim": 0.9075510287279216,
+      "mean_mass_error": 0.4870216294342724,
+      "mean_plume_ssim": 0.8478101353089064,
+      "param_id": "param_155",
+      "plume_ensemble_std": 0.22162294387817383,
+      "real_id": "real_003",
+      "uncertainty_error_iou": 0.23582735705637553
+    },
+    {
+      "mean_ensemble_var": 0.07589963156974457,
+      "mean_global_ssim": 0.8912420044888141,
+      "mean_mass_error": 0.45208794085888065,
+      "mean_plume_ssim": 0.8372260552019598,
+      "param_id": "param_155",
+      "plume_ensemble_std": 0.24025997519493103,
+      "real_id": "real_004",
+      "uncertainty_error_iou": 0.18506112941419062
+    },
+    {
+      "mean_ensemble_var": 0.07138465466283908,
+      "mean_global_ssim": 0.9033608831010004,
+      "mean_mass_error": 0.45353513922874655,
+      "mean_plume_ssim": 0.8455258186253638,
+      "param_id": "param_155",
+      "plume_ensemble_std": 0.23120011389255524,
+      "real_id": "real_005",
+      "uncertainty_error_iou": 0.23823742497452624
+    }
+  ],
+  "split": "iid_test"
+}

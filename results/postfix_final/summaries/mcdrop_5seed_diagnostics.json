@@ -1,0 +1,12 @@
+{
+  "failure_auc": 0.5509166666666667,
+  "failure_status": "defined",
+  "failure_threshold_plume_ssim": 0.6041357164763911,
+  "failure_threshold_source": "corrected ensemble IID 10th percentile",
+  "iid_mc_var_mean": 0.00719399518460374,
+  "n_iid": 110,
+  "n_ood": 270,
+  "n_seeds": 5,
+  "ood_auc": 0.5092929292929292,
+  "ood_mc_var_mean": 0.007368590320736445
+}

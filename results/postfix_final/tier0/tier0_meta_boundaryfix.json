@@ -1,0 +1,15 @@
+{
+  "runtime_sec": 392.0083999633789,
+  "limit": 0,
+  "counts": {
+    "calib": 225,
+    "iid": 110,
+    "ood": 270
+  },
+  "pred_thresh": 1e-08,
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ]
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the analysis or source code."
+type: software
+title: "Groundwater Surrogate Reliability"
+authors:
+  - family-names: "Nguyen"
+    given-names: "Loc K."
+repository-code: "https://github.com/LocNguyen122/groundwater-surrogate-reliability"
+license: MIT
+abstract: "Source and descriptive analyses for auditing uncertainty and calibration in neural surrogates of groundwater contaminant transport under controlled shifts."
