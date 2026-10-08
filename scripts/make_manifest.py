@@ -16,7 +16,7 @@ EXCLUDED = {".git", ".venv", "venv", "__pycache__", "outputs", ".pytest_cache",
 
 def rows() -> list[tuple[str, int, str]]:
     result = []
-    for path in sorted(ROOT.rglob("*")):
+    for path in sorted(ROOT.rglob("*"), key=lambda p: p.relative_to(ROOT).as_posix()):
         relative = path.relative_to(ROOT)
         if (not path.is_file() or path == MANIFEST or EXCLUDED.intersection(relative.parts)
                 or path.suffix in {".pyc", ".pyo"}):
@@ -38,7 +38,12 @@ def main() -> None:
         with MANIFEST.open(newline="", encoding="utf-8") as handle:
             expected = [(r["path"], int(r["bytes"]), r["sha256"]) for r in csv.DictReader(handle)]
         if actual != expected:
-            raise SystemExit("release manifest does not match package files")
+            actual_map = {path: (size, digest) for path, size, digest in actual}
+            expected_map = {path: (size, digest) for path, size, digest in expected}
+            changed = [path for path in sorted(actual_map.keys() | expected_map.keys())
+                       if actual_map.get(path) != expected_map.get(path)]
+            detail = ", ".join(changed) if changed else "file ordering differs"
+            raise SystemExit(f"release manifest does not match package files: {detail}")
         print(f"verified {len(actual)} files")
         return
     with MANIFEST.open("w", newline="", encoding="utf-8") as handle:

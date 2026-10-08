@@ -8,9 +8,14 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import verify_repository
+from make_manifest import rows
 
 
 class ReleaseTools(unittest.TestCase):
+    def test_manifest_uses_platform_independent_path_order(self):
+        paths = [row[0] for row in rows()]
+        self.assertEqual(paths, sorted(paths))
+
     def test_repository_audit(self):
         verify_repository.audit_contents()
 
