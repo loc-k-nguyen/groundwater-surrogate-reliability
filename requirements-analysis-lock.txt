@@ -1,6 +1,7 @@
-# Exact stack used to regenerate and test the v4 summary figures.
-# Python 3.9.25; Windows; no GPU work is required by build_v4_analysis.py.
+# Exact local stack used to reconstruct the corrected scalar summary figures.
+# Python 3.9.25; Windows; build_v5_analysis.py requires no GPU or raw fields.
 numpy==1.26.4
 scipy==1.13.1
 scikit-image==0.24.0
 matplotlib==3.9.4
+Pillow==11.1.0

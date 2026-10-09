@@ -5,7 +5,10 @@ files, checkpoints, or certified manuscript results.
 """
 
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
+from package_paths import DEFAULT_ROOT, asset_path, metadata_path, configure_script_paths
+
+if __name__ == "__main__":
+    DEFAULT_ROOT = configure_script_paths()
 
 import argparse
 import csv

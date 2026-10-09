@@ -1,21 +1,11 @@
-# Release scope
+# Release Scope
 
-## Included
+Included: ML source, evaluation/statistics/figure scripts, tests, fixed splits, sanitized scientific parameter metadata, current figures and lightweight result summaries.
 
-Model and evaluation source, descriptive statistical analysis, figure generators, focused tests, fixed split definitions, normalization statistics, scientific design metadata, and lightweight numerical summaries. No simulator launch commands or proprietary model setup files are included.
+Excluded: raw fields, simulator setups or launch commands, executables, trained weights, full caches, private correspondence, credentials, machine-local paths, internal planning records and superseded reporting outputs.
 
-The original project code is offered under MIT, with copyright attributed to Loc K. Nguyen and contributors. Preserve applicable third-party copyright and license notices. This license does not authorize access to or distribution of excluded assets. Ownership and source-origin checks remain a gate before changing this private repository to public.
+Five metadata exports remove only the simulator-launch field; retained values and record order are unchanged. The native review-threshold export retains its exact value and original fingerprint while omitting unrelated stale statistics. Original source records remain preserved outside this snapshot. Candidate construction provenance and rights review are retained separately; this folder does not imply completed public access or exhaustive source-origin certification.
 
-## Excluded
+The MIT license applies to authorized original project source code and associated documentation, not third-party fonts or excluded assets. See LICENSE and THIRD_PARTY_NOTICES.md. Dependency licenses remain their own. No license grant covering raw simulator assets, restricted data or another party's code is implied. Exact public release/tag and archival DOI are recorded only after verification.
 
-Raw simulation fields, proprietary simulation configurations, executables, trained checkpoints, full prediction caches, infrastructure credentials, machine-local paths, manuscript packages, review correspondence, and development-agent settings.
-
-## Interpretation
-
-Results are finite-design summaries. Historical setting-level confidence intervals and permutation p-values in archived inputs are withdrawn for population inference. Tied review scores use expected within-tie selection and attainable order bounds. Calibration diagnostics do not certify deployment safety.
-
-The reported caches use complete-coverage sliding-window inference. New crop-origin and deterministic-execution options are available, but the reported checkpoints were not retrained with these options. Full restricted-data execution and GPU-training determinism have not been certified for this preparation copy.
-
-## Publication gate
-
-Keep the repository private until rights, third-party attribution, sensitive-file review, fresh-clone verification, citation metadata, and paper-version mapping are complete. No DOI, acceptance, full public dataset, or universal reproduction claim is made here.
+Source, content, reproduction and software checks do not establish independent geological validation, conformal guarantees under shift or deployment safety.

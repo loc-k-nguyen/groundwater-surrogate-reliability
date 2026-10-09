@@ -7,7 +7,10 @@ more existing Obj3 checkpoints and writes isolated prediction and metric files.
 """
 
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
+from package_paths import DEFAULT_ROOT, asset_path, metadata_path, configure_script_paths
+
+if __name__ == "__main__":
+    DEFAULT_ROOT = configure_script_paths()
 
 import argparse
 import csv
@@ -48,7 +51,7 @@ DEFAULT_DATA_ROOT = (
     / "dataset_axisD"
     / "param_9200"
 )
-DEFAULT_STATS = REPO_ROOT / "experiments" / "obj3" / "conference" / "configs" / "obj3_train_stats.json"
+DEFAULT_STATS = REPO_ROOT / "metadata" / "obj3_train_stats.json"
 
 
 def finite_or_none(value: Any) -> Any:

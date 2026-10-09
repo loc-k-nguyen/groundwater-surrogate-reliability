@@ -32,20 +32,14 @@ jobs:
         run: |
           python scripts/verify_repository.py
           python scripts/make_manifest.py --check
-      - name: Run regression tests and CLI checks
+      - name: Run CPU regression tests and source checks
         run: |
           python -m unittest discover -s tests -v
-          python -m src.obj3.conference.train_ms_tmo_obj3 --help
-          python -m src.obj3.journal.train_ms_tmo_obj3_hetero --help
-          python -m src.obj3.journal.train_fno_obj3 --help
-          python -m src.obj3.journal.train_deeponet_obj3 --help
-      - name: Reproduce summary analysis and controls
+          python scripts/evaluate_four_family_quality_v5.py --check-sources
+          python scripts/run_orientation_fixed_inference.py --check-sources
+      - name: Reproduce corrected scalar figures and supplement
         run: |
-          python scripts/build_v4_analysis.py --output-dir outputs/reproduction
-          python scripts/build_workflow_v4.py --output-dir outputs/reproduction
-          python scripts/realization_disjoint_control_analysis.py det_ensemble --output-dir outputs/reproduction/rd
-          python scripts/realization_disjoint_control_analysis.py hetero --output-dir outputs/reproduction/rd
-          python scripts/realization_disjoint_control_analysis.py fno --output-dir outputs/reproduction/rd
-          python scripts/realization_disjoint_control_analysis.py deeponet --output-dir outputs/reproduction/rd
-          python scripts/model_capacity.py --output outputs/reproduction/model_capacity_v4.json
-          python scripts/verify_repository.py --reproduced-dir outputs/reproduction --require-controls
+          python scripts/build_v5_analysis.py --output-dir ../reproduced_v5
+          python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
+          python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
+          python scripts/verify_repository.py --supplement ../selection_crc_baselines.json

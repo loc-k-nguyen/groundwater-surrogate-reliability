@@ -30,6 +30,7 @@ def sample_plume_mae(
 
 
 def hoeffding_radius(n: int, delta: float) -> float:
+    """Historical radius formula; validity requires assumptions not checked here."""
     if n <= 0:
         raise ValueError("n must be positive.")
     if not 0.0 < delta < 1.0:
@@ -51,11 +52,13 @@ def solve_crc_lambda(
     risk_budget: float,
     delta: float = 0.10,
 ) -> CRCSolution:
-    """Choose the smallest residual tolerance whose excess-risk UCB fits the budget.
+    """Select a tolerance by the historical descriptive calibration criterion.
 
-    This adapts the CRC idea to the Obj3 journal setting by controlling the
-    expected plume MAE exceedance above a tolerance lambda. The calibration
-    quantity is therefore sample-level plume MAE, not a binary coverage event.
+    The criterion adds a Hoeffding-shaped radius to mean excess plume MAE.
+    Plume MAE is unbounded and cases share geological draws, so this is not
+    a valid upper confidence bound or a prospective risk-control certificate.
+    ``attained`` records calibration-criterion attainment only, not test risk.
+    Historical field names are retained for numerical artifact compatibility.
     """
     cal_risks = np.asarray(calibration_risks, dtype=np.float32).reshape(-1)
     if cal_risks.size == 0:

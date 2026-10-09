@@ -1,0 +1,332 @@
+{
+  "status": "DESCRIPTIVE_SCALAR_RECONSTRUCTION_COMPLETE",
+  "results": {
+    "iid_test": {
+      "n_cases": 110,
+      "n_distinct_scores": 20,
+      "selection_rule": "Ascending full-field mean ensemble variance; uniform selection within exact ties",
+      "curves": [
+        {
+          "retention": 1.0,
+          "n_retained": 110,
+          "expected_mean_plume_ssim": 0.7334103576540895,
+          "attainable_min": 0.7334103576540895,
+          "attainable_max": 0.7334103576540895,
+          "partial_tie": null
+        },
+        {
+          "retention": 0.9,
+          "n_retained": 99,
+          "expected_mean_plume_ssim": 0.7355243641177714,
+          "attainable_min": 0.7339186172382919,
+          "attainable_max": 0.7369443278819305,
+          "partial_tie": {
+            "score": 0.07863718711196534,
+            "block_size": 6,
+            "retained_from_block": 1
+          }
+        },
+        {
+          "retention": 0.8,
+          "n_retained": 88,
+          "expected_mean_plume_ssim": 0.7387041679353082,
+          "attainable_min": 0.7357821344333284,
+          "attainable_max": 0.741682878862051,
+          "partial_tie": {
+            "score": 0.07771298635451698,
+            "block_size": 6,
+            "retained_from_block": 2
+          }
+        },
+        {
+          "retention": 0.7,
+          "n_retained": 77,
+          "expected_mean_plume_ssim": 0.741343567601419,
+          "attainable_min": 0.7378800561274441,
+          "attainable_max": 0.7448070790753938,
+          "partial_tie": {
+            "score": 0.07589963156974457,
+            "block_size": 6,
+            "retained_from_block": 3
+          }
+        },
+        {
+          "retention": 0.6,
+          "n_retained": 66,
+          "expected_mean_plume_ssim": 0.7442440156054624,
+          "attainable_min": 0.7407892267063138,
+          "attainable_max": 0.7474745935752525,
+          "partial_tie": {
+            "score": 0.071332732605367,
+            "block_size": 6,
+            "retained_from_block": 4
+          }
+        },
+        {
+          "retention": 0.5,
+          "n_retained": 55,
+          "expected_mean_plume_ssim": 0.746333491243537,
+          "attainable_min": 0.7453002678672639,
+          "attainable_max": 0.748221114590643,
+          "partial_tie": {
+            "score": 0.06995470843208512,
+            "block_size": 4,
+            "retained_from_block": 3
+          }
+        }
+      ],
+      "crc": {
+        "0.05": {
+          "calibration": {
+            "risk_budget": 0.05,
+            "lambda_value": 2.42438006401062,
+            "empirical_excess_risk": 0.0,
+            "ucb_excess_risk": 0.07153220087631158,
+            "attained": false
+          },
+          "test": {
+            "mean_plume_mae": 1.0989042520523071,
+            "std_plume_mae": 0.5270299911499023,
+            "excess_risk_mean": 0.0,
+            "fraction_within_lambda": 1.0,
+            "n_samples": 110
+          }
+        },
+        "0.1": {
+          "calibration": {
+            "risk_budget": 0.1,
+            "lambda_value": 1.7659944295883179,
+            "empirical_excess_risk": 0.02064313180744648,
+            "ucb_excess_risk": 0.09217533268375806,
+            "attained": true
+          },
+          "test": {
+            "mean_plume_mae": 1.0989042520523071,
+            "std_plume_mae": 0.5270299911499023,
+            "excess_risk_mean": 0.07338251918554306,
+            "fraction_within_lambda": 0.8181818181818182,
+            "n_samples": 110
+          }
+        },
+        "0.2": {
+          "calibration": {
+            "risk_budget": 0.2,
+            "lambda_value": 0.9476528167724609,
+            "empirical_excess_risk": 0.1279473900794983,
+            "ucb_excess_risk": 0.19947959095580986,
+            "attained": true
+          },
+          "test": {
+            "mean_plume_mae": 1.0989042520523071,
+            "std_plume_mae": 0.5270299911499023,
+            "excess_risk_mean": 0.24228113889694214,
+            "fraction_within_lambda": 0.5181818181818182,
+            "n_samples": 110
+          }
+        }
+      },
+      "predicted_extra175": {
+        "coverage": 0.9352054747066778,
+        "width": 13.499874114990234,
+        "n_pixels": 253455040
+      },
+      "plume_selection": {
+        "true": 143934645,
+        "predicted": 253455040,
+        "intersection": 130534054,
+        "true_plume_recall": 0.9068980855859964,
+        "missed_true_plume_fraction": 0.09310191441400362
+      }
+    },
+    "ood_test": {
+      "n_cases": 270,
+      "n_distinct_scores": 45,
+      "selection_rule": "Ascending full-field mean ensemble variance; uniform selection within exact ties",
+      "curves": [
+        {
+          "retention": 1.0,
+          "n_retained": 270,
+          "expected_mean_plume_ssim": 0.7056384081547586,
+          "attainable_min": 0.7056384081547586,
+          "attainable_max": 0.7056384081547586,
+          "partial_tie": null
+        },
+        {
+          "retention": 0.9,
+          "n_retained": 243,
+          "expected_mean_plume_ssim": 0.7071762387694792,
+          "attainable_min": 0.7058228645020265,
+          "attainable_max": 0.7085296130369317,
+          "partial_tie": {
+            "score": 0.08793775866578935,
+            "block_size": 6,
+            "retained_from_block": 3
+          }
+        },
+        {
+          "retention": 0.8,
+          "n_retained": 216,
+          "expected_mean_plume_ssim": 0.7089551985041185,
+          "attainable_min": 0.708270021489754,
+          "attainable_max": 0.7097112389303836,
+          "partial_tie": {
+            "score": 0.083910132834922,
+            "block_size": 6,
+            "retained_from_block": 5
+          }
+        },
+        {
+          "retention": 0.7,
+          "n_retained": 189,
+          "expected_mean_plume_ssim": 0.7093999844594984,
+          "attainable_min": 0.7080493974596194,
+          "attainable_max": 0.7108558385904796,
+          "partial_tie": {
+            "score": 0.07826641068588322,
+            "block_size": 6,
+            "retained_from_block": 2
+          }
+        },
+        {
+          "retention": 0.6,
+          "n_retained": 162,
+          "expected_mean_plume_ssim": 0.7091389214401022,
+          "attainable_min": 0.7080957954009538,
+          "attainable_max": 0.7101273015417481,
+          "partial_tie": {
+            "score": 0.07515900440144516,
+            "block_size": 6,
+            "retained_from_block": 5
+          }
+        },
+        {
+          "retention": 0.5,
+          "n_retained": 135,
+          "expected_mean_plume_ssim": 0.7090600348108197,
+          "attainable_min": 0.7065338010021875,
+          "attainable_max": 0.7115862686194521,
+          "partial_tie": {
+            "score": 0.07405754336833208,
+            "block_size": 6,
+            "retained_from_block": 3
+          }
+        }
+      ],
+      "crc": {
+        "0.05": {
+          "calibration": {
+            "risk_budget": 0.05,
+            "lambda_value": 2.42438006401062,
+            "empirical_excess_risk": 0.0,
+            "ucb_excess_risk": 0.07153220087631158,
+            "attained": false
+          },
+          "test": {
+            "mean_plume_mae": 1.1025370359420776,
+            "std_plume_mae": 0.4230731129646301,
+            "excess_risk_mean": 0.0,
+            "fraction_within_lambda": 1.0,
+            "n_samples": 270
+          }
+        },
+        "0.1": {
+          "calibration": {
+            "risk_budget": 0.1,
+            "lambda_value": 1.7659944295883179,
+            "empirical_excess_risk": 0.02064313180744648,
+            "ucb_excess_risk": 0.09217533268375806,
+            "attained": true
+          },
+          "test": {
+            "mean_plume_mae": 1.1025370359420776,
+            "std_plume_mae": 0.4230731129646301,
+            "excess_risk_mean": 0.03625563159584999,
+            "fraction_within_lambda": 0.8444444444444444,
+            "n_samples": 270
+          }
+        },
+        "0.2": {
+          "calibration": {
+            "risk_budget": 0.2,
+            "lambda_value": 0.9476528167724609,
+            "empirical_excess_risk": 0.1279473900794983,
+            "ucb_excess_risk": 0.19947959095580986,
+            "attained": true
+          },
+          "test": {
+            "mean_plume_mae": 1.1025370359420776,
+            "std_plume_mae": 0.4230731129646301,
+            "excess_risk_mean": 0.21736353635787964,
+            "fraction_within_lambda": 0.4222222222222222,
+            "n_samples": 270
+          }
+        }
+      },
+      "predicted_extra175": {
+        "coverage": 0.9284996137013404,
+        "width": 13.499874114990234,
+        "n_pixels": 633441235
+      },
+      "plume_selection": {
+        "true": 374944539,
+        "predicted": 633441235,
+        "intersection": 342121654,
+        "true_plume_recall": 0.9124593597561371,
+        "missed_true_plume_fraction": 0.08754064024386288
+      }
+    }
+  },
+  "baselines": {
+    "mcdrop": {
+      "iid_test": {
+        "mean": 0.7276832282850285,
+        "std": 0.008969758973208394,
+        "std_definition": "descriptive checkpoint spread; ddof=0",
+        "n_seeds": 10
+      },
+      "ood_test": {
+        "mean": 0.6988604246419461,
+        "std": 0.008289084248978854,
+        "std_definition": "descriptive checkpoint spread; ddof=0",
+        "n_seeds": 10
+      }
+    },
+    "deterministic": {
+      "iid_test": {
+        "mean": 0.7271292283499274,
+        "std": 0.00897821421514658,
+        "std_definition": "descriptive checkpoint spread; ddof=0",
+        "n_seeds": 10
+      },
+      "ood_test": {
+        "mean": 0.6980907749897992,
+        "std": 0.00829795088806137,
+        "std_definition": "descriptive checkpoint spread; ddof=0",
+        "n_seeds": 10
+      }
+    }
+  },
+  "sources": [
+    {
+      "path": "results/orientation_v5/statistics.json",
+      "sha256": "642e72c7b2fb8d52348c9b7ed9de28443adbdceb8c8c2a7457ef2ebc3fcad10b"
+    },
+    {
+      "path": "results/postfix_final/ensemble/eval/ensemble_metrics_iid_test.json",
+      "sha256": "c6f4af90ccb1f8a55293640c61c77ee05cb78856cb6b8e20aae50775a765ea09"
+    },
+    {
+      "path": "results/postfix_final/ensemble/eval/ensemble_metrics_ood_test.json",
+      "sha256": "c5401a1324b60c2431434599315e373b1bbd6084dea521747a62693adff414aa"
+    },
+    {
+      "path": "results/orientation_v5/native_baselines/mcdrop.json",
+      "sha256": "0f9eccb3faf413d7d844f55bf0e4c712e6ba8ae44f50a8ad6925780c25ea6f86"
+    },
+    {
+      "path": "results/orientation_v5/native_baselines/deterministic.json",
+      "sha256": "759289983d9b8d8cda1dbcacca06c2ef2081e6f21475ab5e01908cb447f7889d"
+    }
+  ],
+  "scope": "Native AMP selection and baseline summaries, with certified corrected excess-risk and region sensitivities. Attainable tie extrema are not confidence intervals. Calibration-budget attainment is not test-budget attainment; unbounded loss and shared geological draws preclude a prospective risk certificate. No inference or independent physical validation is performed."
+}

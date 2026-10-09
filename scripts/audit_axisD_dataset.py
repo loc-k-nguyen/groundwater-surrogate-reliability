@@ -130,7 +130,7 @@ def main() -> None:
         + "\n"
         + f"audit_json={args.out_json}\n"
         + f"audit_csv={args.out_csv}\n"
-        + "Dataset audit only; no model inference was launched.\n",
+        + "GPU inference NOT launched by host batch. Submit the gated Raapoi eval next.\n",
         encoding="utf-8",
     )
     print(status_line, flush=True)

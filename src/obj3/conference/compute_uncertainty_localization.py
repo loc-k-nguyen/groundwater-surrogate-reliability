@@ -10,7 +10,7 @@ A high IoU means uncertainty correctly localizes where errors occur.
 
 Reads existing ensemble NPZ files (no GPU required).
 
-Usage (CPU analysis):
+Usage (Raapoi, CPU job):
     python -m src.obj3.conference.compute_uncertainty_localization \\
         --iid_npz .../iid_test_preds.npz \\
         --ood_npz .../ood_test_preds.npz \\

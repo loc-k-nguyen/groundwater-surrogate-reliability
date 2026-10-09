@@ -16,94 +16,123 @@ rescaling hypothesis the slope should equal sqrt(sigma2Y_eval / sigma2Y_train).
 Read-only. Writes one JSON report. No data is modified, regenerated or reordered.
 """
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
-import csv, json
+import argparse
 from pathlib import Path
-import numpy as np
-
-REPO = DEFAULT_ROOT
-DATA = asset_path("data", REPO / "Obj1/obj1_surrogate_conference/data/T25_TSTEP_OVERRIDE_FINAL/T25_TSTEP_OVERRIDE_FINAL_FLIPPED")
-SPLIT = REPO / "splits/param_split_obj3_ood.json"
-REG = metadata_path("param_registry_master.csv")
-OUT = REPO / "experiments/obj3/journal/reports/analysis/obj3_conductivity_twin_audit.json"
-TWIN_R = 0.999
-
-reg = {int(r["param_id"]): r for r in csv.DictReader(open(REG))}
-split = json.load(open(SPLIT))
 
 
-def load(pid: int, real: int) -> np.ndarray | None:
-    f = DATA / f"param_{pid:03d}" / f"real_{real:03d}.npz"
-    if not f.exists():
-        return None
-    return np.log10(np.maximum(np.load(f)["K"], 1e-30)).ravel().astype(np.float64)
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--repo-root', type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument('--data-root', type=Path)
+    parser.add_argument('--calibration-root', type=Path)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    args.repo_root = args.repo_root.resolve()
+    if args.output.exists():
+        parser.error('Output already exists; use a new isolated path')
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+
+    def asset_path(kind, fallback):
+        value = args.data_root if kind == 'data' else args.calibration_root
+        path = (value or fallback).resolve()
+        if not path.is_dir():
+            parser.error(f'Restricted {kind} directory is missing: {path}. Supply the corresponding root option.')
+        return path
+
+    def metadata_path(name):
+        path = args.repo_root / 'metadata' / name
+        return path if path.exists() else args.repo_root / 'simulation' / name
+
+    import csv, json
+    import numpy as np
+
+    REPO = args.repo_root
+    DATA = asset_path("data", REPO / "Obj1/obj1_surrogate_conference/data/T25_TSTEP_OVERRIDE_FINAL/T25_TSTEP_OVERRIDE_FINAL_FLIPPED")
+    SPLIT = REPO / "splits/param_split_obj3_ood.json"
+    REG = metadata_path("param_registry_master.csv")
+    OUT = args.output
+    TWIN_R = 0.999
+
+    reg = {int(r["param_id"]): r for r in csv.DictReader(open(REG))}
+    split = json.load(open(SPLIT))
 
 
-def collect(ids):
-    out = []
-    for pid in sorted(ids):
-        for r in range(1, 6):
-            v = load(pid, r)
-            if v is not None:
-                out.append((pid, r, v))
-    return out
+    def load(pid: int, real: int) -> np.ndarray | None:
+        f = DATA / f"param_{pid:03d}" / f"real_{real:03d}.npz"
+        if not f.exists():
+            return None
+        return np.log10(np.maximum(np.load(f)["K"], 1e-30)).ravel().astype(np.float64)
 
 
-def standardize(rows):
-    X = np.stack([v for _, _, v in rows])
-    mu = X.mean(1, keepdims=True)
-    sd = X.std(1, keepdims=True)
-    return (X - mu) / np.where(sd > 0, sd, 1.0), X, mu.ravel(), sd.ravel()
+    def collect(ids):
+        out = []
+        for pid in sorted(ids):
+            for r in range(1, 6):
+                v = load(pid, r)
+                if v is not None:
+                    out.append((pid, r, v))
+        return out
 
 
-train = collect(split["train"])
-calib = collect(split["val_calib"] + split["extra_calib"])
-report = {"n_train_fields": len(train), "twin_threshold": TWIN_R, "pools": {}}
-Zt, Xt, _, SDt = standardize(train)
-n_pix = Zt.shape[1]
+    def standardize(rows):
+        X = np.stack([v for _, _, v in rows])
+        mu = X.mean(1, keepdims=True)
+        sd = X.std(1, keepdims=True)
+        return (X - mu) / np.where(sd > 0, sd, 1.0), X, mu.ravel(), sd.ravel()
 
-for pool in ("ood_test", "iid_test"):
-    rows = collect(split[pool])
-    Ze, Xe, _, SDe = standardize(rows)
-    C = (Ze @ Zt.T) / n_pix                      # Pearson r against every training field
-    best = C.argmax(1)
-    rmax = C[np.arange(len(rows)), best]
-    recs, same_real, slope_ok = [], 0, 0
-    for i, (pid, r, _) in enumerate(rows):
-        j = int(best[i])
-        tpid, treal = train[j][0], train[j][1]
-        slope = float(SDe[i] / SDt[j])
-        exp = float(np.sqrt(float(reg[pid]["sigma2Y"]) / float(reg[tpid]["sigma2Y"])))
-        same_real += int(treal == r)
-        slope_ok += int(abs(slope - exp) < 0.02 * exp)
-        recs.append({"param_id": pid, "real": r, "sigma2Y": float(reg[pid]["sigma2Y"]),
-                     "best_train_param": tpid, "best_train_real": treal,
-                     "best_train_sigma2Y": float(reg[tpid]["sigma2Y"]),
-                     "r": float(rmax[i]), "slope": slope, "slope_expected": exp})
-    report["pools"][pool] = {
-        "n_fields": len(rows),
-        "n_twins_r_gt_threshold": int((rmax > TWIN_R).sum()),
-        "fraction_twinned": float((rmax > TWIN_R).mean()),
-        "r_median": float(np.median(rmax)), "r_min": float(rmax.min()), "r_max": float(rmax.max()),
-        "twin_shares_realization_id": int(same_real),
-        "slope_matches_sqrt_variance_ratio": int(slope_ok),
-        "median_offdiagonal_r": float(np.median(np.abs(C))),
-        "fields": recs,
-    }
 
-# Same-pattern check restricted to calibration, which also saw the fields during model selection.
-if calib:
-    Zc, _, _, SDc = standardize(calib)
-    Ccal = (Ze @ Zc.T) / n_pix
-    report["ood_vs_calibration_r_median"] = float(np.median(Ccal.max(1)))
+    train = collect(split["train"])
+    calib = collect(split["val_calib"] + split["extra_calib"])
+    report = {"n_train_fields": len(train), "twin_threshold": TWIN_R, "pools": {}}
+    Zt, Xt, _, SDt = standardize(train)
+    n_pix = Zt.shape[1]
 
-OUT.parent.mkdir(parents=True, exist_ok=True)
-json.dump(report, open(OUT, "w"), indent=1)
-for pool, d in report["pools"].items():
-    print(f"{pool}: {d['n_twins_r_gt_threshold']}/{d['n_fields']} twins at r>{TWIN_R}; "
-          f"r median {d['r_median']:.4f} min {d['r_min']:.4f}; "
-          f"same realization id {d['twin_shares_realization_id']}; "
-          f"slope matches sqrt ratio {d['slope_matches_sqrt_variance_ratio']}; "
-          f"median |r| off-target {d['median_offdiagonal_r']:.4f}")
-print("ood vs calibration max-r median:", report.get("ood_vs_calibration_r_median"))
-print("REPORT ->", OUT)
+    for pool in ("ood_test", "iid_test"):
+        rows = collect(split[pool])
+        Ze, Xe, _, SDe = standardize(rows)
+        C = (Ze @ Zt.T) / n_pix                      # Pearson r against every training field
+        best = C.argmax(1)
+        rmax = C[np.arange(len(rows)), best]
+        recs, same_real, slope_ok = [], 0, 0
+        for i, (pid, r, _) in enumerate(rows):
+            j = int(best[i])
+            tpid, treal = train[j][0], train[j][1]
+            slope = float(SDe[i] / SDt[j])
+            exp = float(np.sqrt(float(reg[pid]["sigma2Y"]) / float(reg[tpid]["sigma2Y"])))
+            same_real += int(treal == r)
+            slope_ok += int(abs(slope - exp) < 0.02 * exp)
+            recs.append({"param_id": pid, "real": r, "sigma2Y": float(reg[pid]["sigma2Y"]),
+                         "best_train_param": tpid, "best_train_real": treal,
+                         "best_train_sigma2Y": float(reg[tpid]["sigma2Y"]),
+                         "r": float(rmax[i]), "slope": slope, "slope_expected": exp})
+        report["pools"][pool] = {
+            "n_fields": len(rows),
+            "n_twins_r_gt_threshold": int((rmax > TWIN_R).sum()),
+            "fraction_twinned": float((rmax > TWIN_R).mean()),
+            "r_median": float(np.median(rmax)), "r_min": float(rmax.min()), "r_max": float(rmax.max()),
+            "twin_shares_realization_id": int(same_real),
+            "slope_matches_sqrt_variance_ratio": int(slope_ok),
+            "median_offdiagonal_r": float(np.median(np.abs(C))),
+            "fields": recs,
+        }
+
+    # Same-pattern check restricted to calibration, which also saw the fields during model selection.
+    if calib:
+        Zc, _, _, SDc = standardize(calib)
+        Ccal = (Ze @ Zc.T) / n_pix
+        report["ood_vs_calibration_r_median"] = float(np.median(Ccal.max(1)))
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    json.dump(report, open(OUT, "w"), indent=1)
+    for pool, d in report["pools"].items():
+        print(f"{pool}: {d['n_twins_r_gt_threshold']}/{d['n_fields']} twins at r>{TWIN_R}; "
+              f"r median {d['r_median']:.4f} min {d['r_min']:.4f}; "
+              f"same realization id {d['twin_shares_realization_id']}; "
+              f"slope matches sqrt ratio {d['slope_matches_sqrt_variance_ratio']}; "
+              f"median |r| off-target {d['median_offdiagonal_r']:.4f}")
+    print("ood vs calibration max-r median:", report.get("ood_vs_calibration_r_median"))
+    print("REPORT ->", OUT)
+
+
+if __name__ == '__main__':
+    main()

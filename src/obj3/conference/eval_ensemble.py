@@ -46,6 +46,18 @@ PLUME_MIN_PIXELS = 64
 EPS_C = 1e-12
 
 
+def summarize_variance(var_pred: np.ndarray, c_phys: np.ndarray) -> dict:
+    """Separate prediction-time full-field variance from retrospective plume variance."""
+    if var_pred.shape != c_phys.shape:
+        raise ValueError("Variance and reference concentration shapes differ")
+    mask = c_phys > PLUME_THRESH
+    return {
+        "mean_ensemble_var": float(var_pred.mean()),
+        "plume_ensemble_var": float(var_pred[mask].mean()) if mask.any() else None,
+        "plume_variance_region": "oracle: reference physical concentration > 1e-8",
+    }
+
+
 def load_ensemble_models(
     checkpoint_paths: List[str],
     device: str = "cuda",
@@ -138,17 +150,13 @@ def evaluate_ensemble_on_split(
                 plume_ssims.append(ps)
             mass_errors.append(me)
 
-        # Sample-level uncertainty = mean pixelwise variance
-        sample_uncertainty = float(var_pred.mean())
-
         results.append({
             "param_id": param_id,
             "real_id": real_id,
             "mean_plume_ssim": float(np.mean(plume_ssims)) if plume_ssims else float("nan"),
             "mean_global_ssim": float(np.mean(global_ssims)),
             "mean_mass_error": float(np.mean(mass_errors)),
-            "mean_ensemble_var": sample_uncertainty,
-            "plume_ensemble_var": float(var_pred[:, :, :].mean()),  # will refine with plume mask
+            **summarize_variance(var_pred, C_phys_gt),
         })
 
         if (i + 1) % 10 == 0:

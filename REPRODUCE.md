@@ -1,97 +1,47 @@
-# Reproduction guide
+# Reproduction
 
-Run commands from the code-folder root. Summary analyses require no raw fields or GPU.
+## Environment
 
-## Current analyses and figures
+Summary reconstruction was tested with Python 3.9.25, NumPy 1.26.4, SciPy 1.13.1, scikit-image 0.24.0 and Matplotlib 3.9.4. The local software tests use PyTorch 2.1.0. The reported four-family GPU quality run used PyTorch 2.1.2/CUDA 11.8 on an A100 40 GB in FP32. Calibration and native review inputs retain their distinct AMP protocol. These environments are not claimed bitwise equivalent for GPU execution.
 
-```bash
-python -m pip install -r requirements-analysis-lock.txt
-python scripts/build_v4_analysis.py --output-dir outputs/reproduction
-python scripts/build_workflow_v4.py --output-dir outputs/reproduction
-python scripts/verify_repository.py --reproduced-dir outputs/reproduction
-```
+requirements-analysis-lock.txt records the tested scalar-analysis dependencies. requirements.txt adds the local tested PyTorch stack. The shipped source does not import scikit-learn; it is not required by these commands. Installing those packages is a separate user action; this snapshot did not install dependencies or execute training.
 
-The tested environment is Python 3.9.25, NumPy 1.26.4, SciPy 1.13.1, scikit-image 0.24.0, and Matplotlib 3.9.4. No package installation was performed for the v4 checks. The source environment also contains PyTorch 2.1.0 with CUDA build 11.8 and cuDNN 8.7.0, used for CPU tests and source parameter counting.
+## Scalar Results and Figures
 
-The descriptive generator reads the matched-pool CSVs, transport-ladder CSVs, corrected ensemble JSONs, and reference-derived threshold in results/reporting_statistics/. It computes pairwise AUROC with one-half credit for equal scores, and expected review recall under uniform selection within exact uncertainty-score ties. Min/max tie-order bounds are computed analytically. No setting resampling is performed.
-
-| Output in figures/v4_final/ | Manuscript item |
-|---|---|
-| fig1_workflow_v4.pdf and .svg | Figure 1; vector conceptual workflow |
-| fig2_transport_ladder_v4.pdf | Figure 2 |
-| fig3_taxonomy_v4.pdf | Figure 3; descriptive taxonomy table |
-| fig4_distributions_v4.pdf | Figure 4; all simulation-case points |
-| fig5_triage_v4.pdf | Figure 5; tie-aware illustrative review |
-| v4_analysis.json | Taxonomy, ladder, triage, and ensemble accuracy |
-| model_capacity_v4.json | Source parameter counts |
-
-The JSON records SHA-256 hashes of the numerical source files. For PDF comparison use rendered pixels rather than file hashes, because PDF metadata can include creation timestamps.
-
-## Other manuscript sources
-
-The four-family descriptive control can also be regenerated without the withdrawn permutations:
+Run from the package root and select a new output outside it:
 
 ```bash
-python scripts/realization_disjoint_control_analysis.py det_ensemble --output-dir outputs/reproduction/rd
-python scripts/realization_disjoint_control_analysis.py hetero --output-dir outputs/reproduction/rd
-python scripts/realization_disjoint_control_analysis.py fno --output-dir outputs/reproduction/rd
-python scripts/realization_disjoint_control_analysis.py deeponet --output-dir outputs/reproduction/rd
-```
-
-- results/twin_audit/obj3_realization_disjoint_control{,_hetero,_fno,_deeponet}.json: four-family small-draw control. Existing p-values inside these archived records are withdrawn from inference.
-- results/twin_audit/obj3_twin_paired_shift_effect{,_full}.json: paired amplitude changes.
-- results/postfix_final/conformal/conformal_unit_and_calibration_sensitivity.json: 175-only and realization-level oracle-region calibration.
-- results/postfix_final/tier0/tier0_results_boundaryfix.csv: original 225-case oracle and predicted-region coverage.
-- results/postfix_final/conformal/calibration_nonphysical_sensitivity.json: flagged calibration IDs and quantile sensitivity.
-- results/postfix_final/aci/aci_alpha_0.10.json: post-hoc adaptive sensitivity.
-- results/postfix_final/selective_prediction_curve.json: retention summaries.
-- results/postfix_final/crc/crc_results.json: historical unnormalized Hoeffding sensitivity, with no risk-control guarantee.
-- results/postfix_final/ensemble/eval/: full-field SSIM, concentration-sum error, and oracle Gaussian CRPS.
-
-## Focused checks and capacity
-
-```bash
-python -m unittest discover -s tests -v
-python scripts/model_capacity.py --output outputs/reproduction/model_capacity_v4.json
 python scripts/make_manifest.py --check
+python scripts/verify_repository.py
+python -m unittest discover -s tests -v
+python scripts/build_v5_analysis.py --output-dir ../reproduced_v5
+python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
+python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
+python scripts/verify_repository.py --supplement ../selection_crc_baselines.json
 ```
 
-The manifest verifies sizes and SHA-256 digests. It does not replace an archival DOI or approved license.
+The generator uses results/orientation_v5/quality/, two unchanged native AMP accuracy files and a reduced JSON containing only the unchanged reference-derived review threshold. Current outputs are compared to figures/v5_corrected/v5_analysis_portable.json. Numerical scientific sections must match exactly; source fingerprints differ intentionally for the reduced threshold file. Generated source paths and hashes must resolve inside this package. PNG comparisons use pixels, not timestamp-dependent PDF bytes.
 
-## Raw scripts
+The package includes corrected calibration, conditional and paired scalar summaries in results/orientation_v5/. It does not re-execute private-cache calibration through the figure command. Historical scalar controls under results/twin_audit/ are retained only as finite-design controls; archived p-values and setting-level confidence intervals are withdrawn from population inference. See [results/README.md](results/README.md) for masks and protocol distinctions.
 
-The twelve repaired raw-data scripts use scripts/package_paths.py. Their common root options are --repo-root, --data-root, and --calibration-root, or environment variables SURROGATE_REPO_ROOT, SURROGATE_DATA_ROOT, and SURROGATE_CALIBRATION_ROOT. Package-relative defaults find src/, splits/, and metadata/ from the shipped folder rather than an assumed ancestor depth. The corresponding script's existing checkpoint/cache and output options must still point to restricted assets and a new output location.
+The separate selection command reconstructs results/orientation_v5/selection_crc_baselines.json from five manifest-pinned scalar inputs. It uses uniform selection within exact uncertainty-score ties; attainable extrema are not confidence intervals. It preserves ten-checkpoint baseline spreads with ddof=0 and corrected descriptive excess-risk/region summaries. CRC calibration-criterion attainment is not test-budget attainment or a prospective risk guarantee. This command performs no inference and refuses existing outputs or outputs inside the package.
 
-For example:
+The workflow source and shipped PDF/SVG are provided. Regenerating the manual workflow requires the authors' diagrams.net layout process; the scalar command reproduces only quantitative figures 2-5. It neither regenerates simulation panels nor revises their spatial orientation.
+
+## CPU-Only Source Checks
 
 ```bash
-python scripts/evaluate_matched_input_screening.py --repo-root . --data-root /path/to/fields --matched-root /path/to/transport-fields --matched-audit /path/to/transport-audit.json --output-dir /path/to/new-audit
-python scripts/eval_ensemble_uq.py --help
+python scripts/evaluate_four_family_quality_v5.py --check-sources
+python scripts/run_orientation_fixed_inference.py --check-sources
+python scripts/recompute_orientation_statistics_v5.py --help
 ```
 
-Calibration sensitivity scripts additionally accept the original project layout through --repo-root because their cache paths refer to the certified run structure. Missing raw assets prevent execution; root configuration does not create data or make restricted assets available. Their numerical execution has not been retested with raw assets.
+The first two return SOURCE_IMPORTS_PASSED_ONLY with data_checked=false and inference_performed=false. These checks import bundled sources and report hashes; they do not validate fields, model weights, full caches or numerical output.
 
-## Training entry points
+Actual corrected inference requires external approved assets, the original certificates and frozen absolute inventory paths, all five checkpoint/config hashes per family, declared native/reversed field roots, verified normalization and CUDA. Source overrides are --runner-path, --evaluator-path and --adapter-path; asset roots are explicitly configurable. The quality runner also accepts --run-root for original certification records. No silent inventory relocation is supported. Existing outputs are preserved. No training, raw inference or cache download is authorized by a source-check command.
 
-All four families are present:
+## Historical Training Protocol
 
-```bash
-python -m src.obj3.conference.train_ms_tmo_obj3 --help
-python -m src.obj3.journal.train_ms_tmo_obj3_hetero --help
-python -m src.obj3.journal.train_fno_obj3 --help
-python -m src.obj3.journal.train_deeponet_obj3 --help
-```
+All four training modules expose --help, --legacy_crop_sampling and --deterministic. Reported checkpoints used the legacy crop sampler and did not enforce deterministic GPU kernels. The repaired sampler or deterministic execution changes that implementation protocol; it is not a regeneration of reported weights. Fixed seeds do not imply bitwise historical GPU repeatability.
 
-Each command accepts --main_data_root, --extra_data_root, --split_json, --stats_json, --out_root, --run_name, --seed, --epochs, --batch_size, --deterministic, and --legacy_crop_sampling. Raw roots and the original training-normalization JSON must be supplied explicitly. Use the fixed split at splits/param_split_obj3_ood.json, isolated output paths, and seeds 0,1,2,3,4 for each ensemble. A one-epoch, batch-size-four, seed-zero smoke must precede any new full training.
-
-Example restricted-data smoke for DeepONet:
-
-```bash
-python -m src.obj3.journal.train_deeponet_obj3 --main_data_root /path/to/main-fields --extra_data_root /path/to/calibration-fields --split_json splits/param_split_obj3_ood.json --stats_json metadata/obj3_train_stats.json --out_root /path/to/new-runs --run_name deeponet_smoke_seed0 --seed 0 --epochs 1 --batch_size 4 --max_train_files 8 --max_val_files 4 --legacy_crop_sampling
-```
-
-Training writes config.json, epoch metrics, and checkpoints beneath the selected run directory. The common budget is AdamW (1e-4, zero decay), cosine schedule, 200 epochs, batch 16, patch 320, clip 1.0, and no augmentation; FNO uses fp32 and the other families fp16. Historical runs used the legacy crop convention and no deterministic-kernel requirement. A corrected-crop or deterministic retraining is a different implementation protocol, not a regeneration of already reported weights. GPU training and heavy inference require a suitable external compute environment; these stages were not executed during repository preparation.
-
-## Availability
-
-See RELEASE_SCOPE.md and CODE_AVAILABILITY.md. Original project code uses MIT; restricted assets remain excluded. This private preparation snapshot supports summary reproduction, not an assertion that all training assets are publicly available. An archival release DOI will be recorded only after verification.
+Repeating training requires approved fields and normalization, unchanged splits, explicit new output paths and the appropriate server execution process. Raw assets are not supplied by this package. No new training or simulation was performed to prepare this snapshot.

@@ -10,7 +10,10 @@ Evaluation-only: no training, no split edits, no conference-output writes. Outpu
 mirror the hetero eval schema (summaries + per-sample CSV + comparisons).
 """
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
+from package_paths import DEFAULT_ROOT, asset_path, metadata_path, configure_script_paths
+
+if __name__ == "__main__":
+    DEFAULT_ROOT = configure_script_paths()
 import argparse, csv, json, logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -157,7 +160,10 @@ def main():
     ap.add_argument("--pred_clamp_min",type=float,default=-12.0); ap.add_argument("--pred_clamp_max",type=float,default=2.0)
     ap.add_argument("--amp",action="store_true",help="Enable autocast during inference. Default is fp32.")
     a=ap.parse_args()
-    out=Path(a.output_dir); out.mkdir(parents=True,exist_ok=True)
+    out=Path(a.output_dir)
+    if out.exists():
+        ap.error("Output already exists; use a new isolated path")
+    out.mkdir(parents=True)
     hetero=(a.arch=="hetero")
     with open(a.stats_json) as f: stats=json.load(f)
     models=build_models(a.arch,a.checkpoints,a.device)

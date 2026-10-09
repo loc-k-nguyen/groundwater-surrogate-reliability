@@ -1,3 +1,2 @@
-# Preserve exact bytes used by source hashes and numerical certificates.
+# Preserve exact bytes for manifest and scientific provenance hashes.
 * -text
-*.pdf binary

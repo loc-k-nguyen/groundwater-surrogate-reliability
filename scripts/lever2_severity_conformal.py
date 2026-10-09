@@ -5,8 +5,8 @@ OOD test sigma2Y=2.0 is OUTSIDE support):
 
   1. SCP                        - split conformal, global calibration
   2. NEC                        - ensemble-std-normalized conformal (reproduces baseline)
-  3. NEC-recal                  - global-scalar variance recalibration (shown to be a
-                                  coverage no-op; documented clarifying result)
+  3. NEC-recal                  - historical key for nearest-regime normalized conformal;
+                                  not global-scalar variance recalibration
   4. Mondrian (regime)          - per-regime quantile; OOD -> nearest calib regime (1.5)
   5. severity-conditioned       - DEPLOYABLE: fit q(severity) over calib regimes using an
                                   input-K severity score, extrapolate to test severity
@@ -21,12 +21,12 @@ NO distribution-free OOD guarantee is claimed. See OBJ3_EMS_UPGRADE_FRAMING_LOCK
 Memory-safe: NPZ members are streamed one sample-slice at a time (never fully materialized).
 """
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
 
 import argparse
 import csv
 import json
 import logging
+import os
 import time
 import zipfile
 from pathlib import Path
@@ -37,21 +37,23 @@ import numpy as np
 logging.disable(logging.WARNING)  # silence dataset "config dir missing" chatter
 import sys
 
-REPO_ROOT = DEFAULT_ROOT
+REPO_ROOT = Path(os.environ.get("SURROGATE_REPO_ROOT", Path(__file__).resolve().parents[1])).resolve()
 sys.path.insert(0, str(REPO_ROOT))
 from src.obj3.conference.data_obj3_ood import collect_npz_files, load_obj3_split  # noqa: E402
 
 PLUME_THRESH = 1e-8
-# Deployable predicted-plume mask convention matches obj3_deployable_conformal.py:
-# mask = (y_pred > PLUME_THRESH) in the log-prediction domain (dense predicted core).
-PRED_THRESH = PLUME_THRESH
+# Predictions are log10 concentrations. This selects physical predicted positives,
+# not the historical dense-core mask at a physical concentration near one.
+PRED_THRESH = float(np.log10(PLUME_THRESH))
 EPS_NEC = 1e-4
 SIGMA_FLOOR_Q = 0.10
 EPS_K = 1e-6
 ALPHAS = (0.05, 0.10, 0.20)
-MAIN_ROOT = asset_path("data", REPO_ROOT / "Obj1/obj1_surrogate_conference/data/T25_TSTEP_OVERRIDE_FINAL")
-EXTRA_ROOT = asset_path("calibration", REPO_ROOT / "simulation/datasets/obj3_calibration")
-REGISTRY = metadata_path("param_registry_master.csv")
+MAIN_ROOT = Path(os.environ.get("SURROGATE_DATA_ROOT", REPO_ROOT / "Obj1/obj1_surrogate_conference/data/T25_TSTEP_OVERRIDE_FINAL"))
+EXTRA_ROOT = Path(os.environ.get("SURROGATE_CALIBRATION_ROOT", REPO_ROOT / "simulation/datasets/obj3_calibration"))
+REGISTRY = REPO_ROOT / "metadata/param_registry_master.csv"
+if not REGISTRY.exists():
+    REGISTRY = REPO_ROOT / "simulation/param_registry_master.csv"
 
 
 # ----------------------------- streaming reader -----------------------------

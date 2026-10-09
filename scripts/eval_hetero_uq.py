@@ -6,7 +6,10 @@ write into conference output roots.
 """
 
 from __future__ import annotations
-from package_paths import DEFAULT_ROOT, asset_path, metadata_path
+from package_paths import DEFAULT_ROOT, asset_path, metadata_path, configure_script_paths
+
+if __name__ == "__main__":
+    DEFAULT_ROOT = configure_script_paths()
 
 import argparse
 import csv
@@ -40,9 +43,9 @@ logger = logging.getLogger(__name__)
 
 REPO_ROOT = DEFAULT_ROOT
 DEFAULT_MAIN_ROOT = asset_path("data", REPO_ROOT / "Obj1" / "obj1_surrogate_conference" / "data" / "T25_TSTEP_OVERRIDE_FINAL")
-DEFAULT_EXTRA_ROOT = REPO_ROOT / "simulation" / "datasets" / "obj3_calibration"
+DEFAULT_EXTRA_ROOT = asset_path("calibration", REPO_ROOT / "simulation" / "datasets" / "obj3_calibration")
 DEFAULT_SPLIT = REPO_ROOT / "splits" / "param_split_obj3_ood.json"
-DEFAULT_STATS = REPO_ROOT / "experiments" / "obj3" / "conference" / "configs" / "obj3_train_stats.json"
+DEFAULT_STATS = REPO_ROOT / "metadata" / "obj3_train_stats.json"
 DEFAULT_AXISD_D1 = (
     REPO_ROOT
     / "experiments"

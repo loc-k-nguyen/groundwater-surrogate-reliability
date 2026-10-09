@@ -9,7 +9,7 @@ Computes for each sample and timestep:
 All metrics use physical concentration (c_phys) with threshold 1e-8.
 Reads existing ensemble NPZ files — no GPU required.
 
-Usage (CPU analysis):
+Usage (Raapoi, CPU job):
     python -m src.obj3.conference.compute_physical_metrics \\
         --iid_npz .../preds/iid_test_preds.npz \\
         --ood_npz .../preds/ood_test_preds.npz \\

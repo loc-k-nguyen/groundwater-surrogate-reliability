@@ -1,62 +1,39 @@
 # Groundwater Surrogate Reliability
 
-[![CPU checks](https://github.com/loc-k-nguyen/groundwater-surrogate-reliability/actions/workflows/ci.yml/badge.svg)](https://github.com/loc-k-nguyen/groundwater-surrogate-reliability/actions/workflows/ci.yml)
+Code and scalar results for auditing neural groundwater-transport surrogates under conductivity-variance shifts and omitted transport controls.
 
-Research code for auditing neural predictions of groundwater contaminant transport under distribution shift. The analysis distinguishes input-distribution screening, model-specific uncertainty ranking, and conformal calibration. Four monitor families are included: a U-Net deep ensemble, a heteroscedastic U-Net, a Fourier neural operator, and DeepONet.
+![Reliability diagnostics](figures/v5_corrected/fig3_taxonomy_v5.png)
 
-![Reliability audit workflow](figures/v4_final/fig1_workflow_v4.svg)
+This code-only snapshot contains model and evaluation implementations, fixed split definitions, sanitized parameter metadata, quantitative figure scripts, and corrected summaries. It does not contain simulation fields, simulator setup files, executables, checkpoints, prediction caches or private correspondence. Original project code and associated documentation use the MIT license; third-party terms are preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Reproduce the analysis
+## Reproduce
 
-Use Python 3.9.25 for the recorded analysis environment. No GPU or restricted data is needed for these commands:
-
-```bash
-python -m venv .venv
-# Activate the environment using your operating system's venv command.
-python -m pip install -r requirements-analysis-lock.txt
-python scripts/build_v4_analysis.py --output-dir outputs/reproduction
-python scripts/build_workflow_v4.py --output-dir outputs/reproduction
-python scripts/verify_repository.py --reproduced-dir outputs/reproduction
-```
-
-Generators require a new or empty destination and refuse to replace existing results. Numerical reproduction is checked against the included source-traceable JSON, not PDF timestamps.
-
-For model-source tests and CPU parameter counting, install PyTorch 2.1.0 using the appropriate CPU or GPU distribution for your environment, then run:
+From this folder, using the documented analysis environment:
 
 ```bash
-python -m unittest discover -s tests -v
-python scripts/model_capacity.py --output outputs/reproduction/model_capacity_v4.json
 python scripts/make_manifest.py --check
+python scripts/verify_repository.py
+python -m unittest discover -s tests -v
+python scripts/build_v5_analysis.py --output-dir ../reproduced_v5
+python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
+python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
+python scripts/verify_repository.py --supplement ../selection_crc_baselines.json
 ```
 
-[REPRODUCE.md](REPRODUCE.md) documents the control analyses, training entry points, dependencies, and restricted-data stages. [The CI workflow](.github/workflows/ci.yml) specifies the CPU test environment.
+Use a new output directory outside the package. These commands need no raw simulation data or GPU. The software tests additionally need PyTorch. See [REPRODUCE.md](REPRODUCE.md) for environment and restricted-data boundaries.
 
-## Scientific scope
+## Scope
 
-The surrogates observe conductivity K, not the varied transport controls. A fixed-input dispersivity ladder therefore cannot change prediction-only uncertainty scores. Oracle plume-region scores may change because their scoring mask uses simulated concentration.
+- Four five-member monitors: deterministic U-Net, heteroscedastic U-Net, Fourier operator and DeepONet.
+- Corrected physical-quality summaries contain all 42,800 case-time scalar records, not spatial prediction arrays.
+- Four-family quality uses FP32; calibration exports and native review ranking retain their separate AMP protocol.
+- Fixed-input dispersivity comparisons distinguish changes in a ground-truth scoring mask from changes in an uncertainty field.
+- Calibration coverage is reported with its support, unit, mask and interval width. It is not a prospective safety guarantee.
 
-The geological generator shares draw identifiers across parameter settings. The main corpus contains at most five geological draws; the held-out-pattern control evaluates two. AUROCs, coverage, and paired differences are descriptive comparisons within this finite design. They do not establish population-level detection, distribution-free safety under shift, or deployability. Historical setting-bootstrap confidence intervals and permutation p-values are withdrawn from inference.
+Cases share a small number of geological draws. Results describe the finite benchmark design, not independent population samples. Unpaired-pool AUROC does not establish detection of omitted transport controls. A concentration sum is not a physical mass balance, and uncertainty ranking is not deployment authorization.
 
-Review ranking handles exact score ties using expected uniform selection within each tie, with attainable order bounds. These bounds are not confidence intervals. The unpaired transport comparison also reflects differences between the input pools, so it is not a dispersivity-detection experiment.
+The editable workflow is [the draw.io source](figures/draw/fig1_workflow_drawio_v5.drawio). Quantitative panels use actual archived outputs or scalar records, not generated plume images. The associated manuscript discloses AI assistance with language, code review and workflow revisions; the authors retain responsibility for the results and interpretation.
 
-## Repository layout
+## Availability
 
-| Path | Contents |
-|---|---|
-| `src/` | Models, datasets, training, and evaluation source |
-| `scripts/` | Descriptive analysis, figures, and verification tools |
-| `tests/` | Focused regression tests |
-| `results/` | Lightweight numerical inputs and correction records |
-| `figures/v4_final/` | Reference outputs matching manuscript revision 4 |
-| `splits/`, `metadata/` | Fixed split, normalization, and scientific design metadata |
-| `docs/` | Provenance and metadata transformation record |
-
-Internal model import paths are retained to avoid changing the validated implementation. Shared source is included; no other research repository is required for the documented summary reproduction.
-
-## Availability and citation
-
-This repository is being prepared privately for a future paper submission. No journal acceptance or archival DOI is claimed. Raw fields, simulator setups, executables, trained checkpoints, and prediction caches are not included. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md).
-
-Original project code is licensed under [MIT](LICENSE). This does not grant rights to restricted data or simulator assets, or replace third-party license obligations. See [RELEASE_SCOPE.md](RELEASE_SCOPE.md) and [provenance](docs/PROVENANCE.md).
-
-Use [CITATION.cff](CITATION.cff) for software credit. Maintainer: [Loc K. Nguyen](https://github.com/loc-k-nguyen). The associated manuscript lists Loc K. Nguyen, Allanah Kenny, Theo S. Sarris, and Binh P. Nguyen; its publication metadata will be added once verified.
+Repository: https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The manuscript-associated snapshot is identified by tag `ems-v5-2026-10-10`. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md), [RELEASE_SCOPE.md](RELEASE_SCOPE.md), [CHANGELOG.md](CHANGELOG.md) and [CITATION.cff](CITATION.cff). No archival DOI, journal submission or editorial status is asserted.

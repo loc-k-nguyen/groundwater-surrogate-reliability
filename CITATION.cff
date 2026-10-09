@@ -1,10 +1,24 @@
 cff-version: 1.2.0
-message: "Please cite this software when using the analysis or source code."
-type: software
-title: "Groundwater Surrogate Reliability"
+message: "If you use this code, please cite the associated manuscript."
+title: "Auditing neural surrogate reliability under distribution shift: a layered protocol and its application to groundwater contaminant transport"
 authors:
-  - family-names: "Nguyen"
-    given-names: "Loc K."
+  - family-names: Nguyen
+    given-names: Loc K.
+    orcid: "https://orcid.org/0000-0003-0561-6659"
+    affiliation: "Victoria University of Wellington"
+  - family-names: Kenny
+    given-names: Allanah
+    affiliation: "New Zealand Institute for Public Health and Forensic Science"
+  - family-names: Sarris
+    given-names: Theo S.
+    affiliation: "New Zealand Institute for Public Health and Forensic Science"
+  - family-names: Nguyen
+    given-names: Binh P.
+    affiliation: "Victoria University of Wellington"
+abstract: >-
+  Code and lightweight result summaries for an audit of reliability diagnostics for neural
+  groundwater contaminant-transport surrogates under an input-visible conductivity-variance
+  shift and an omitted-control transport stress test. Unpaired transport pools have distinguishable conductivity fields.
 repository-code: "https://github.com/loc-k-nguyen/groundwater-surrogate-reliability"
 license: MIT
-abstract: "Source and descriptive analyses for auditing uncertainty and calibration in neural surrogates of groundwater contaminant transport under controlled shifts."
+version: "ems-v5-2026-10-10"

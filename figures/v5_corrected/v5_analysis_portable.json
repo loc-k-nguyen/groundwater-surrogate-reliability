@@ -1,0 +1,671 @@
+{
+  "interpretation": "finite deterministic design; no population inference",
+  "taxonomy": {
+    "Deep ensemble (U-Net)": {
+      "oracle": {
+        "variance": 0.6031649831649831,
+        "transport": 0.931060606060606
+      },
+      "full_field": {
+        "variance": 0.5907070707070707,
+        "transport": 0.28939393939393937
+      },
+      "ssim": {
+        "reference": 0.7334029196034477,
+        "variance": 0.7056310465500683,
+        "transport": 0.8386079161403827
+      }
+    },
+    "Heteroscedastic (U-Net)": {
+      "oracle": {
+        "variance": 0.5351178451178451,
+        "transport": 0.9893939393939394
+      },
+      "full_field": {
+        "variance": 0.49663299663299665,
+        "transport": 0.45606060606060606
+      },
+      "ssim": {
+        "reference": 0.6876625630881182,
+        "variance": 0.6590737482245742,
+        "transport": 0.7976382503789333
+      }
+    },
+    "Fourier operator": {
+      "oracle": {
+        "variance": 0.6221212121212121,
+        "transport": 0.5795454545454546
+      },
+      "full_field": {
+        "variance": 0.9709090909090909,
+        "transport": 0.38333333333333336
+      },
+      "ssim": {
+        "reference": 0.7617767542505138,
+        "variance": 0.7313836559208643,
+        "transport": 0.7522037103812651
+      }
+    },
+    "DeepONet": {
+      "oracle": {
+        "variance": 0.5147811447811448,
+        "transport": 0.6022727272727273
+      },
+      "full_field": {
+        "variance": 0.6680134680134681,
+        "transport": 0.4318181818181818
+      },
+      "ssim": {
+        "reference": 0.5260630534500365,
+        "variance": 0.5334306814467372,
+        "transport": 0.7379991060887964
+      }
+    }
+  },
+  "transport_ladder": {
+    "Deep ensemble (U-Net)": {
+      "oracle": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.7666666666666667
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.8318181818181818
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.9037878787878788
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.931060606060606
+        }
+      ],
+      "full_field": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.28939393939393937
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.28939393939393937
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.28939393939393937
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.28939393939393937
+        }
+      ]
+    },
+    "Heteroscedastic (U-Net)": {
+      "oracle": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.8583333333333333
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.8772727272727273
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.8787878787878788
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.9893939393939394
+        }
+      ],
+      "full_field": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.45606060606060606
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.45606060606060606
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.45606060606060606
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.45606060606060606
+        }
+      ]
+    },
+    "Fourier operator": {
+      "oracle": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.6666666666666666
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.6575757575757576
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.6356060606060606
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.5795454545454546
+        }
+      ],
+      "full_field": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.38333333333333336
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.38333333333333336
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.38333333333333336
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.38333333333333336
+        }
+      ]
+    },
+    "DeepONet": {
+      "oracle": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.5636363636363636
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.5795454545454546
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.6
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.6022727272727273
+        }
+      ],
+      "full_field": [
+        {
+          "alpha_L_m": 80,
+          "auroc": 0.4318181818181818
+        },
+        {
+          "alpha_L_m": 100,
+          "auroc": 0.4318181818181818
+        },
+        {
+          "alpha_L_m": 140,
+          "auroc": 0.4318181818181818
+        },
+        {
+          "alpha_L_m": 200,
+          "auroc": 0.4318181818181818
+        }
+      ]
+    }
+  },
+  "triage": {
+    "n_cases": 380,
+    "n_failures": 74,
+    "n_distinct_scores": 65,
+    "threshold": 0.6041357164763911,
+    "failure_auroc": 0.601682564917859,
+    "tie_policy": "uniform random selection within exact score ties",
+    "bound_interpretation": "attainable tie-order bounds, not confidence intervals",
+    "operating_points": [
+      {
+        "reviewed_fraction": 0.05,
+        "n_reviewed": 19,
+        "expected_failures_caught": 6.166666666666667,
+        "expected_recall": 0.08333333333333334,
+        "recall_min": 0.08108108108108109,
+        "recall_max": 0.0945945945945946,
+        "expected_precision": 0.32456140350877194,
+        "lift": 1.6666666666666667,
+        "lift_min": 1.6216216216216217,
+        "lift_max": 1.8918918918918919
+      },
+      {
+        "reviewed_fraction": 0.1,
+        "n_reviewed": 38,
+        "expected_failures_caught": 11.666666666666666,
+        "expected_recall": 0.15765765765765766,
+        "recall_min": 0.14864864864864866,
+        "recall_max": 0.17567567567567569,
+        "expected_precision": 0.30701754385964913,
+        "lift": 1.5765765765765765,
+        "lift_min": 1.4864864864864864,
+        "lift_max": 1.7567567567567568
+      },
+      {
+        "reviewed_fraction": 0.2,
+        "n_reviewed": 76,
+        "expected_failures_caught": 21.833333333333332,
+        "expected_recall": 0.29504504504504503,
+        "recall_min": 0.28378378378378377,
+        "recall_max": 0.2972972972972973,
+        "expected_precision": 0.28728070175438597,
+        "lift": 1.4752252252252251,
+        "lift_min": 1.4189189189189189,
+        "lift_max": 1.4864864864864864
+      },
+      {
+        "reviewed_fraction": 0.3,
+        "n_reviewed": 114,
+        "expected_failures_caught": 30.166666666666668,
+        "expected_recall": 0.40765765765765766,
+        "recall_min": 0.40540540540540543,
+        "recall_max": 0.4189189189189189,
+        "expected_precision": 0.2646198830409357,
+        "lift": 1.3588588588588588,
+        "lift_min": 1.3513513513513515,
+        "lift_max": 1.3963963963963963
+      },
+      {
+        "reviewed_fraction": 0.5,
+        "n_reviewed": 190,
+        "expected_failures_caught": 46.333333333333336,
+        "expected_recall": 0.6261261261261262,
+        "recall_min": 0.6081081081081081,
+        "recall_max": 0.6351351351351351,
+        "expected_precision": 0.24385964912280703,
+        "lift": 1.2522522522522523,
+        "lift_min": 1.2162162162162162,
+        "lift_max": 1.2702702702702702
+      }
+    ],
+    "tie_blocks": [
+      {
+        "score": 0.0992992283782666,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.0921239960541051,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08892343752730261,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08794165414210905,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.08793775866578935,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08649589077691433,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08631359996394723,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08536350974657707,
+        "n_cases": 5,
+        "n_failures": 2
+      },
+      {
+        "score": 0.0846285281457352,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.083910132834922,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.0835366969494775,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.08312412074877129,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.08057962440897005,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07901875350666547,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07863718711196534,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07826641068588322,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07800123973207328,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07771298635451698,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07769224106729111,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07768782799249872,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.0774057768379801,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.0760941306121787,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07589963156974457,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07584094282774004,
+        "n_cases": 6,
+        "n_failures": 0
+      },
+      {
+        "score": 0.07515900440144516,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07506092713945377,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07445309213904781,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07427685514608597,
+        "n_cases": 7,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07405754336833208,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.0737834417496469,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07339611674811997,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07264244478952864,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07251358026625306,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.07138465466283908,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.071332732605367,
+        "n_cases": 6,
+        "n_failures": 0
+      },
+      {
+        "score": 0.07123369859845059,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.07076477317978012,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06995470843208512,
+        "n_cases": 4,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06935954248238406,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06871957188442535,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.06857062024037068,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06825413225253316,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06804266054786048,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06793658832233788,
+        "n_cases": 4,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06709108239800274,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06707002571942702,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.0666696061161279,
+        "n_cases": 6,
+        "n_failures": 2
+      },
+      {
+        "score": 0.06629540657420843,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06627699977537238,
+        "n_cases": 4,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06622373909043501,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06559570310905426,
+        "n_cases": 6,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06543976638477508,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06536710055522482,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06536132113105235,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06430951262711423,
+        "n_cases": 6,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06424401317303367,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06357207633394454,
+        "n_cases": 4,
+        "n_failures": 0
+      },
+      {
+        "score": 0.06246915363053241,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.0624005540072203,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.061780585992439865,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.06132467583178088,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.061059655276729734,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.060343356799815645,
+        "n_cases": 6,
+        "n_failures": 1
+      },
+      {
+        "score": 0.0602722193545248,
+        "n_cases": 6,
+        "n_failures": 0
+      },
+      {
+        "score": 0.05843165396197605,
+        "n_cases": 4,
+        "n_failures": 0
+      }
+    ]
+  },
+  "ensemble_accuracy": {
+    "iid": {
+      "gaussian_crps_mean": 1.2408650520691344,
+      "gaussian_crps_n_plume_pixels": 143934645,
+      "gaussian_crps_std": 1.2732238885144371,
+      "global_ssim_mean": 0.9013757910989428,
+      "global_ssim_std": 0.02334558846649349,
+      "mass_error_mean": 0.47418442618111345,
+      "mass_error_std": 0.013161068197738506,
+      "plume_ssim_mean": 0.7334103576540896,
+      "plume_ssim_std": 0.1021161680008109
+    },
+    "ood": {
+      "gaussian_crps_mean": 1.168471184587483,
+      "gaussian_crps_n_plume_pixels": 374944539,
+      "gaussian_crps_std": 1.1488432265784938,
+      "global_ssim_mean": 0.8899434457405491,
+      "global_ssim_std": 0.026384269920149472,
+      "mass_error_mean": 0.44043347763817514,
+      "mass_error_std": 0.014077416054425813,
+      "plume_ssim_mean": 0.7056384081547589,
+      "plume_ssim_std": 0.1124571693079778
+    }
+  },
+  "sources": [
+    {
+      "path": "results/orientation_v5/quality/unet_det/quality.json",
+      "sha256": "f87c052bda916fd3218a1b7cde0c4a91511638edd20f559067353adbea1fa169"
+    },
+    {
+      "path": "results/orientation_v5/quality/hetero/quality.json",
+      "sha256": "041789adc5b78e479dbd0ca2bfb58821e6687117247d61985e5bb611c6f430b2"
+    },
+    {
+      "path": "results/orientation_v5/quality/fno/quality.json",
+      "sha256": "bc4b2b6b5947ce72405d20683ca7f3d5ebcf39c58afe8d53a10a76a3a92d82bb"
+    },
+    {
+      "path": "results/orientation_v5/quality/deeponet/quality.json",
+      "sha256": "81931ce1cf7331a6319a9178d2e699c5f148aa514070baafde5ccf843f37e468"
+    },
+    {
+      "path": "results/reporting_statistics/reporting_statistics.json",
+      "sha256": "84d772af005293a160153d8917d96a97b2209b3eea6e6c13f4d6db1e4eace7aa"
+    },
+    {
+      "path": "results/postfix_final/ensemble/eval/ensemble_metrics_iid_test.json",
+      "sha256": "c6f4af90ccb1f8a55293640c61c77ee05cb78856cb6b8e20aae50775a765ea09"
+    },
+    {
+      "path": "results/postfix_final/ensemble/eval/ensemble_metrics_ood_test.json",
+      "sha256": "c5401a1324b60c2431434599315e373b1bbd6084dea521747a62693adff414aa"
+    }
+  ]
+}

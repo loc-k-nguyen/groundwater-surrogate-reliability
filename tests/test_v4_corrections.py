@@ -9,7 +9,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-spec = importlib.util.spec_from_file_location("v4_analysis", ROOT / "scripts/build_v4_analysis.py")
+spec = importlib.util.spec_from_file_location("current_analysis", ROOT / "scripts/build_v5_analysis.py")
 analysis = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(analysis)
 from src.obj3.conference.data_obj3_ood import Obj3PatchDataset
