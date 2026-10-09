@@ -2,7 +2,7 @@
 
 Code and scalar results for auditing neural groundwater-transport surrogates under conductivity-variance shifts and omitted transport controls.
 
-![Reliability diagnostics](figures/v5_corrected/fig3_taxonomy_v5.png)
+![Paired transport audit](figures/v6/fig_paired_transport_v6.png)
 
 This code-only snapshot contains model and evaluation implementations, fixed split definitions, sanitized parameter metadata, quantitative figure scripts, and corrected summaries. It does not contain simulation fields, simulator setup files, executables, checkpoints, prediction caches or private correspondence. Original project code and associated documentation use the MIT license; third-party terms are preserved in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -13,14 +13,31 @@ From this folder, using the documented analysis environment:
 ```bash
 python scripts/make_manifest.py --check
 python scripts/verify_repository.py
-python -m unittest discover -s tests -v
+python scripts/run_tests.py --suite fast
+python scripts/run_tests.py --suite full --report ../cpu_tests.json
+python scripts/synthetic_demo.py --output ../synthetic_fixture.json
+python scripts/build_physical_diagnostics_v6.py --output-dir ../physical_diagnostics_v6
 python scripts/build_v5_analysis.py --output-dir ../reproduced_v5
 python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
 python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
 python scripts/verify_repository.py --supplement ../selection_crc_baselines.json
 ```
 
-Use a new output directory outside the package. These commands need no raw simulation data or GPU. The software tests additionally need PyTorch. See [REPRODUCE.md](REPRODUCE.md) for environment and restricted-data boundaries.
+Use new outputs outside the package. None of these commands needs raw simulation data or a GPU. Tests and the analytic synthetic demonstration need CPU PyTorch. The runner limits numerical-library threads to avoid oversubscription and reports actual elapsed time. The full suite retains all regression tests; the fast suite is an explicitly smaller entry point, not a replacement.
+
+## Reproduction Levels
+
+| Level | Publicly executable | What it establishes |
+|---|---|---|
+| Certified scalar analysis | Tables, paired/time profiles, calibration and tie-aware summaries | Reconstruction of supplied finite-design results |
+| Synthetic numerical fixture | Joint row alignment, full 600 x 400 sliding windows, all 25 outputs and physical metrics | Numerical pipeline behavior on an analytic mapping, not trained-model accuracy |
+| Restricted full experiment | Requires approved fields, frozen certificates and checkpoints | Not reproducible from this code-only download alone |
+
+See [REPRODUCE.md](REPRODUCE.md) for producer/output mappings and [TRAINING_PROTOCOL.md](TRAINING_PROTOCOL.md) for historical training commands and external assets. Do not run training to reproduce scalar figures.
+
+## Conformal API
+
+`SplitConformalPredictor` requires `target_scale="physical"` or `target_scale="log10"`. A physical cutoff of `1e-8` becomes `-8` for unoffset log10 targets. For study targets `log10(C + 1e-12)`, also pass `log_offset=1e-12`. Ambiguous calls now fail rather than silently masking the wrong region. This generic API is not the producer of the manuscript's dedicated calibration rows; the correction does not revise those numerical results.
 
 ## Scope
 
@@ -36,4 +53,4 @@ The editable workflow is [the draw.io source](figures/draw/fig1_workflow_drawio_
 
 ## Availability
 
-Repository: https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The manuscript-associated snapshot is identified by tag `ems-v5-2026-10-10-r1`. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md), [RELEASE_SCOPE.md](RELEASE_SCOPE.md), [CHANGELOG.md](CHANGELOG.md) and [CITATION.cff](CITATION.cff). No archival DOI, journal submission or editorial status is asserted.
+Repository: https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The v6 snapshot is identified by tag `ems-v6-2026-10-10`; the corrected v5 tag remains preserved. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md), [RELEASE_SCOPE.md](RELEASE_SCOPE.md), [CHANGELOG.md](CHANGELOG.md) and [CITATION.cff](CITATION.cff). No archival DOI, journal submission or editorial status is asserted.

@@ -17,6 +17,9 @@ jobs:
       PYTHONDONTWRITEBYTECODE: "1"
       MPLBACKEND: Agg
       CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -34,7 +37,9 @@ jobs:
           python scripts/make_manifest.py --check
       - name: Run CPU regression tests and source checks
         run: |
-          python -m unittest discover -s tests -v
+          python scripts/run_tests.py --suite fast --report ../fast_cpu.json
+          python scripts/run_tests.py --suite full --report ../full_cpu.json
+          python scripts/synthetic_demo.py --output ../synthetic_fixture.json
           python scripts/evaluate_four_family_quality_v5.py --check-sources
           python scripts/run_orientation_fixed_inference.py --check-sources
       - name: Reproduce corrected scalar figures and supplement
@@ -43,3 +48,5 @@ jobs:
           python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
           python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
           python scripts/verify_repository.py --supplement ../selection_crc_baselines.json
+          python scripts/build_physical_diagnostics_v6.py --output-dir ../physical_v6
+          python scripts/verify_repository.py --physical-dir ../physical_v6

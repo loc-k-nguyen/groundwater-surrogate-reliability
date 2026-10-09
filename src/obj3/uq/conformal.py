@@ -27,9 +27,28 @@ class CoverageSummary:
 
 
 class SplitConformalPredictor:
-    def __init__(self, one_sided_upper: bool = False, plume_thresh: float = 1e-8) -> None:
+    """Generic residual intervals; not the producer of manuscript calibration rows.
+
+    The threshold is always in physical concentration units. Log targets use
+    log10(C + log_offset); choosing the target scale explicitly prevents silent
+    physical/log masking errors. Reported coverage is descriptive unless the
+    calibration assumptions are independently established.
+    """
+
+    def __init__(self, one_sided_upper: bool = False, plume_thresh: float = 1e-8,
+                 *, target_scale: str, log_offset: float = 0.0) -> None:
+        if target_scale not in {"physical", "log10"}:
+            raise ValueError("target_scale must be 'physical' or 'log10'.")
+        if not np.isfinite(plume_thresh) or plume_thresh <= 0:
+            raise ValueError("plume_thresh must be finite and positive in physical units.")
+        if not np.isfinite(log_offset) or log_offset < 0:
+            raise ValueError("log_offset must be finite and nonnegative.")
+        if target_scale == "physical" and log_offset != 0:
+            raise ValueError("log_offset applies only to log10 targets.")
         self.one_sided_upper = bool(one_sided_upper)
         self.plume_thresh = float(plume_thresh)
+        self.target_scale = target_scale
+        self.log_offset = float(log_offset)
         self.calibration_scores: np.ndarray | None = None
 
     def fit(self, scores: np.ndarray) -> None:
@@ -80,7 +99,11 @@ class SplitConformalPredictor:
                 f"y_true and y_pred must share the same shape, got {y_true_arr.shape} vs {y_pred_arr.shape}."
             )
 
-        plume_mask = y_true_arr > self.plume_thresh
+        if y_true_arr.size == 0 or not np.isfinite(y_true_arr).all() or not np.isfinite(y_pred_arr).all():
+            raise ValueError("Targets and predictions must be nonempty and finite.")
+        cutoff = (np.log10(self.plume_thresh + self.log_offset)
+                  if self.target_scale == "log10" else self.plume_thresh)
+        plume_mask = y_true_arr > cutoff
         report: dict[str, dict[str, float]] = {}
 
         for alpha in alpha_list:
@@ -118,6 +141,8 @@ class SplitConformalPredictor:
                 "plume_coverage": summary.plume_coverage,
                 "plume_mean_width": summary.plume_mean_width,
                 "mode": "one_sided_upper" if self.one_sided_upper else "two_sided",
+                "target_scale": self.target_scale,
+                "plume_cutoff_in_target_units": float(cutoff),
             }
 
         return report

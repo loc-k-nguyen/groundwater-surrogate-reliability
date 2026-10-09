@@ -21,4 +21,5 @@ abstract: >-
   shift and an omitted-control transport stress test. Unpaired transport pools have distinguishable conductivity fields.
 repository-code: "https://github.com/loc-k-nguyen/groundwater-surrogate-reliability"
 license: MIT
-version: "ems-v5-2026-10-10-r1"
+version: "ems-v6-2026-10-10"
+date-released: "2026-10-10"

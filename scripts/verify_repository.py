@@ -141,12 +141,34 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reproduced-dir", type=Path)
     parser.add_argument("--supplement", type=Path)
+    parser.add_argument("--physical-dir", type=Path)
     args = parser.parse_args()
     audit_contents()
     if args.reproduced_dir is not None:
         compare_reproduction(args.reproduced_dir.resolve())
     if args.supplement is not None:
         compare_supplement(args.supplement.resolve())
+    if args.physical_dir is not None:
+        directory = args.physical_dir.resolve()
+        reference = ROOT / "figures/v6"
+        expected = json.loads((reference / "physical_diagnostics_v6.json").read_text())
+        actual = json.loads((directory / "physical_diagnostics_v6.json").read_text())
+        if actual != expected:
+            raise ValueError("Physical/paired scalar diagnostics differ")
+        for source in actual["sources"]:
+            relative = Path(source["path"])
+            local = (ROOT / relative).resolve()
+            if relative.is_absolute() or not local.is_relative_to(ROOT.resolve()):
+                raise ValueError("Nonlocal physical source")
+            if hashlib.sha256(local.read_bytes()).hexdigest() != source["sha256"]:
+                raise ValueError("Physical source hash mismatch")
+        for stem in ("fig_paired_transport_v6", "fig_physical_time_v6"):
+            if not (directory / (stem + ".pdf")).is_file():
+                raise ValueError("Missing physical PDF")
+            with Image.open(reference / (stem + ".png")) as original, Image.open(directory / (stem + ".png")) as regenerated:
+                if not np.array_equal(np.asarray(original.convert("RGBA")), np.asarray(regenerated.convert("RGBA"))):
+                    raise ValueError("Physical figure pixels differ: " + stem)
+        print("Physical reproduction passed: 42800 case-times, ten source hashes, two pixel-identical figures")
 
 
 if __name__ == "__main__":

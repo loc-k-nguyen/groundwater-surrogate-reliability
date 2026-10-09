@@ -19,6 +19,7 @@ def main():
     p.add_argument("--manuscript", type=Path, required=True)
     p.add_argument("--artifact-root", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--report-version", choices=("v5", "v6"), default="v5")
     a = p.parse_args()
     if a.output.exists():
         raise FileExistsError("Preserve previous audits")
@@ -37,8 +38,9 @@ def main():
     for report in (stats, gates):
         for path, digest in report["source_files"].items():
             check("source hash: " + path, hashlib.sha256((root / path).read_bytes()).hexdigest() == digest)
+    taxonomy_table = re.search(r"\\label\{tab:taxonomy\}(.*?)\\end\{table\}", tex, re.S).group(1)
     for name, values in analysis["taxonomy"].items():
-        line = next(line for line in tex.splitlines() if line.startswith(name + " &") and len(numbers(line)) == 6)
+        line = next(line for line in taxonomy_table.splitlines() if line.startswith(name + " &") and len(numbers(line)) == 6)
         expected = [values[r][s] for r in ("oracle", "full_field") for s in ("variance", "transport")]
         expected += [values["ssim"][s] for s in ("reference", "transport")]
         check("taxonomy: " + name, numbers(line) == [round(x, 3) for x in expected])
@@ -107,7 +109,11 @@ def main():
     check("unique labels", len(labels) == len(set(labels)))
     check("references resolve", set(re.findall(r"\\ref\{([^}]+)\}", tex)) <= set(labels))
     figures = re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", tex)
-    check("current figures", len(figures) == 5 and all("_v5.pdf" in f for f in figures))
+    expected_figures = ({"fig1_workflow_drawio_v5.pdf", "fig2_transport_ladder_v5.pdf", "fig3_taxonomy_v5.pdf",
+                         "fig4_distributions_v5.pdf", "fig5_triage_v5.pdf"} if a.report_version == "v5" else
+                        {"fig1_workflow_drawio_v5.pdf", "fig1_workflow_compact_v6.pdf", "fig_paired_transport_v6.pdf", "fig_physical_time_v6.pdf",
+                         "fig3_taxonomy_v5.pdf", "fig4_distributions_v5.pdf", "fig5_triage_v5.pdf"})
+    check("current figures", len(figures) == len(expected_figures) and set(figures) == expected_figures)
     for figure in figures:
         check("figure exists: " + figure, (a.manuscript.parent / "figures" / figure).is_file())
     abstract = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", tex, re.S).group(1)

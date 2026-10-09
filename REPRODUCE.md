@@ -13,7 +13,10 @@ Run from the package root and select a new output outside it:
 ```bash
 python scripts/make_manifest.py --check
 python scripts/verify_repository.py
-python -m unittest discover -s tests -v
+python scripts/run_tests.py --suite fast
+python scripts/run_tests.py --suite full --report ../cpu_tests.json
+python scripts/synthetic_demo.py --output ../synthetic_fixture.json
+python scripts/build_physical_diagnostics_v6.py --output-dir ../physical_diagnostics_v6
 python scripts/build_v5_analysis.py --output-dir ../reproduced_v5
 python scripts/verify_repository.py --reproduced-dir ../reproduced_v5
 python scripts/build_selection_supplement.py --output ../selection_crc_baselines.json
@@ -29,6 +32,12 @@ The separate selection command reconstructs results/orientation_v5/selection_crc
 The workflow source and shipped PDF/SVG are provided. Regenerating the manual workflow requires the authors' diagrams.net layout process; the scalar command reproduces only quantitative figures 2-5. It neither regenerates simulation panels nor revises their spatial orientation.
 
 ## CPU-Only Source Checks
+
+The v6 physical generator verifies completion hashes and all 42,800 FP32 case-time rows. It computes recall/precision, peak-error quantiles, finite-only centroid summaries in meters, and paired SSIM changes separately for transverse ratios 0.1 and 1.0. Both groups hold their ratio fixed across ladder levels. No new inference is performed. Time profiles use nonuniform output indices, not interpolated days. Absent absolute truth/prediction peaks and pixel arrays cannot be reconstructed as scatterplots or spatial error maps.
+
+The synthetic command creates analytic arrays in memory and checks joint orientation, terminal sliding-window coverage over 600 x 400 pixels and all 25 outputs, and physical metrics with an untrained analytic mapping. It is a numerical fixture, not scientific validation. Fast tests include this fixture and scale/notice tests; full tests retain the complete suite. Numerical-library thread limits are one. CI permits 20 minutes overall; reports record actual elapsed suite time.
+
+See [TRAINING_PROTOCOL.md](TRAINING_PROTOCOL.md) for the fixed configuration ledger, command template and producer/output matrix. Historical GPU-hours and full earlier search histories are unavailable, not inferred from present timings.
 
 ```bash
 python scripts/evaluate_four_family_quality_v5.py --check-sources
