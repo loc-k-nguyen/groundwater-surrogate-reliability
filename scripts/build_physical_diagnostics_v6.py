@@ -32,7 +32,7 @@ def main():
     if out == ROOT or ROOT in out.parents or out.exists():
         raise FileExistsError("Use a new output directory outside the package")
     out.mkdir(parents=True)
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "pdf.fonttype": 42,
+    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 12, "pdf.fonttype": 42,
                          "axes.spines.top": False, "axes.spines.right": False})
     meta = {}
     sources = []
@@ -106,17 +106,23 @@ def main():
         ladder_axes[1].plot([80, 100, 140, 200], [1., 1., 1., 1.], color=color, linewidth=1)
     for i, regime in enumerate(("Low-support reference", "Variance shift")):
         for j, title in enumerate(("Median full-field log RMSE", "Median relative peak bias", "Pooled plume recall / precision")):
-            axes[i, j].set_title(regime + "\n" + title, fontsize=9)
+            axes[i, j].set_title(regime + "\n" + title, fontsize=11)
             axes[i, j].set_xlabel("Output timestep index")
             axes[i, j].grid(alpha=.2)
         axes[i, 1].axhline(0, color=".5", linewidth=.7)
         axes[i, 2].set_ylim(0, 1.03)
-    axes[0, 0].legend(fontsize=7)
-    ladder_axes[0].set(xlabel="Longitudinal dispersivity (m)", ylabel="Mean plume SSIM change from 80 m", title="Paired morphology response")
+    handles, labels = axes[0, 0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="outside upper center", ncol=4, fontsize=11)
+    ladder_axes[0].set(xlabel="Longitudinal dispersivity (m)", ylabel="Mean plume SSIM change\nfrom same case at 80 m")
+    ladder_axes[0].set_title("Paired morphology response", fontsize=12)
     ladder_axes[0].axhline(0, color=".5", linewidth=.7)
-    ladder_axes[0].legend(fontsize=7)
-    ladder_axes[1].set(xlabel="Longitudinal dispersivity (m)", ylabel="Full-field score / same-case score at 80 m", title="Prediction-only scores are unchanged", ylim=(.98, 1.02))
-    ladder_axes[1].text(.5, .18, "8 pairs at transverse ratio 0.1\n4 pairs at transverse ratio 1.0\nExact zero spread in both groups", transform=ladder_axes[1].transAxes, ha="center", fontsize=9)
+    handles, labels = ladder_axes[0].get_legend_handles_labels()
+    ladder_fig.legend(handles, labels, loc="outside upper center", ncol=4, fontsize=11)
+    ladder_axes[1].set(xlabel="Longitudinal dispersivity (m)", ylabel="Full-field score ratio\nrelative to 80 m", ylim=(.98, 1.02))
+    ladder_axes[1].set_title("Exact score invariance", fontsize=12)
+    for axis in ladder_axes:
+        axis.set_xticks([80, 100, 140, 200])
+    ladder_axes[1].text(.5, .18, "8 pairs at transverse ratio 0.1\n4 pairs at transverse ratio 1.0\nExact zero spread in both groups", transform=ladder_axes[1].transAxes, ha="center", fontsize=11)
     for name, figure in (("fig_physical_time_v6", fig), ("fig_paired_transport_v6", ladder_fig)):
         figure.savefig(out / (name + ".pdf"))
         figure.savefig(out / (name + ".png"), dpi=180)

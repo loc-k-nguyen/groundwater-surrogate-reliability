@@ -1,5 +1,9 @@
 # Scientific Snapshot History
 
+## ems-v6-2026-10-10-r1
+
+Increase paired/time-profile figure typography for manuscript-scale reading, move legends off data, wrap long labels and show exact ladder levels. All scalar/source records remain byte-identical. The first v6 tag is preserved; no experiment, numerical summary or model implementation changed in this presentation revision.
+
 ## ems-v6-2026-10-10
 
 - Require explicit physical/log10 scale in the generic conformal API; fix physical plume masking and test invalid/empty inputs. Dedicated manuscript calibration values are unchanged.

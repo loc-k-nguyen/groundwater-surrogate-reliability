@@ -53,4 +53,4 @@ The editable workflow is [the draw.io source](figures/draw/fig1_workflow_drawio_
 
 ## Availability
 
-Repository: https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The v6 snapshot is identified by tag `ems-v6-2026-10-10`; the corrected v5 tag remains preserved. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md), [RELEASE_SCOPE.md](RELEASE_SCOPE.md), [CHANGELOG.md](CHANGELOG.md) and [CITATION.cff](CITATION.cff). No archival DOI, journal submission or editorial status is asserted.
+Repository: https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The v6 snapshot is identified by tag `ems-v6-2026-10-10-r1`; the corrected v5 tag remains preserved. See [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md), [RELEASE_SCOPE.md](RELEASE_SCOPE.md), [CHANGELOG.md](CHANGELOG.md) and [CITATION.cff](CITATION.cff). No archival DOI, journal submission or editorial status is asserted.
