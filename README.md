@@ -1,6 +1,6 @@
 # Groundwater Surrogate Reliability
 
-[![CPU checks](https://github.com/LocNguyen122/groundwater-surrogate-reliability/actions/workflows/ci.yml/badge.svg)](https://github.com/LocNguyen122/groundwater-surrogate-reliability/actions/workflows/ci.yml)
+[![CPU checks](https://github.com/loc-k-nguyen/groundwater-surrogate-reliability/actions/workflows/ci.yml/badge.svg)](https://github.com/loc-k-nguyen/groundwater-surrogate-reliability/actions/workflows/ci.yml)
 
 Research code for auditing neural predictions of groundwater contaminant transport under distribution shift. The analysis distinguishes input-distribution screening, model-specific uncertainty ranking, and conformal calibration. Four monitor families are included: a U-Net deep ensemble, a heteroscedastic U-Net, a Fourier neural operator, and DeepONet.
 
@@ -59,4 +59,4 @@ This repository is being prepared privately for a future paper submission. No jo
 
 Original project code is licensed under [MIT](LICENSE). This does not grant rights to restricted data or simulator assets, or replace third-party license obligations. See [RELEASE_SCOPE.md](RELEASE_SCOPE.md) and [provenance](docs/PROVENANCE.md).
 
-Use [CITATION.cff](CITATION.cff) for software credit. Maintainer: [Loc K. Nguyen](https://github.com/LocNguyen122). The associated manuscript lists Loc K. Nguyen, Allanah Kenny, Theo S. Sarris, and Binh P. Nguyen; its publication metadata will be added once verified.
+Use [CITATION.cff](CITATION.cff) for software credit. Maintainer: [Loc K. Nguyen](https://github.com/loc-k-nguyen). The associated manuscript lists Loc K. Nguyen, Allanah Kenny, Theo S. Sarris, and Binh P. Nguyen; its publication metadata will be added once verified.
