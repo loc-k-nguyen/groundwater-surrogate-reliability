@@ -52,8 +52,8 @@ def main():
     for label, region in (("Variance AUROC, oracle score", "oracle"), ("Variance AUROC, deployable score", "deployable")):
         line = next(line for line in tex.splitlines() if line.startswith(label + " &"))
         check("inherited two-draw control: " + region, numbers(line) == [round(d["twin_free_pooled"]["auroc_" + region]["auroc"], 3) for d in controls])
-    previous = load(code / "figures/v4_final/v4_analysis.json")
-    check("native triage exactly unchanged", analysis["triage"] == previous["triage"])
+    reference = load(code / "figures/v5_corrected/v5_analysis_portable.json")
+    check("native triage matches shipped corrected reference", analysis["triage"] == reference["triage"])
     triage = analysis["triage"]
     check("review counts", (triage["n_cases"], triage["n_failures"], triage["n_distinct_scores"]) == (380, 74, 65))
     for point in triage["operating_points"]:

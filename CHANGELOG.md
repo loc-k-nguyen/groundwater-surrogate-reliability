@@ -1,6 +1,6 @@
 # Scientific Snapshot History
 
-## ems-v5-2026-10-10
+## ems-v5-2026-10-10-r1
 
 This snapshot contains the corrected analyses associated with the current manuscript, paired input/target orientation and full-field sliding-window boundary handling. Frozen checkpoints and splits are unchanged. Earlier repository snapshots contain superseded orientation-dependent calibration and transport summaries; they must not be mixed with the current figures or used as current findings.
 

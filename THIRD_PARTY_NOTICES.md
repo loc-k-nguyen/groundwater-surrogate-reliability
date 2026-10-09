@@ -34,4 +34,4 @@ The workflow PDF contains Arial subsets for document embedding, not extraction o
 
 ## Availability
 
-The canonical repository address is https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The manuscript-associated snapshot is tag `ems-v5-2026-10-10`. No archival DOI or journal submission is asserted. Restricted-asset access remains subject to its rights holders' approval.
+The canonical repository address is https://github.com/loc-k-nguyen/groundwater-surrogate-reliability. The manuscript-associated snapshot is tag `ems-v5-2026-10-10-r1`. No archival DOI or journal submission is asserted. Restricted-asset access remains subject to its rights holders' approval.
